@@ -1,0 +1,2687 @@
+{
+  "users": [
+    {
+      "id": "306e",
+      "first_name": "Movie",
+      "last_name": "admin",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$VQyFlRFPDZUHa7QHtmI6CuEqNIBCTuXjW.sN.r3H6lOXrqMLGHiO.",
+      "phone": "0938451729",
+      "address": "HN",
+      "role": "admin",
+      "status": "ACTIVE",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=admin@gmail.com",
+      "created_at": "2025-12-29T01:04:30.277Z",
+      "updated_at": "2025-12-29T01:04:30.277Z",
+      "favorites": []
+    },
+    {
+      "id": "95ff",
+      "first_name": "user",
+      "last_name": "user",
+      "email": "user@gmail.com",
+      "password": "$2b$10$VQyFlRFPDZUHa7QHtmI6CuEqNIBCTuXjW.sN.r3H6lOXrqMLGHiO.",
+      "phone": "0938451729",
+      "address": "hcm",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=user@gmail.com",
+      "status": "ACTIVE",
+      "role": "user",
+      "favorites": [],
+      "created_at": "2025-12-22T00:56:15.884Z",
+      "updated_at": "2025-12-22T00:56:15.884Z"
+    },
+    {
+      "id": "1994",
+      "first_name": "Trần",
+      "last_name": "Tài",
+      "email": "trantai180506@gmail.com",
+      "password": "$2b$10$yEeLeciFuR.CdnP.1PxtBuygOGMGIVpcSojsC1qbu.0I17fliQJUm",
+      "phone": "0938451729",
+      "address": "Võ Tài",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=trantai180506@gmail.com",
+      "status": "ACTIVE",
+      "role": "STAFF",
+      "favorites": [],
+      "created_at": "2026-01-05T01:58:19.646Z",
+      "updated_at": "2026-01-05T01:58:49.443Z"
+    }
+  ],
+  "genres": [
+    {
+      "id": "1",
+      "genre_name": "Action"
+    },
+    {
+      "id": "2",
+      "genre_name": "Phiêu lưu"
+    },
+    {
+      "id": "3",
+      "genre_name": "Hoạt hình"
+    },
+    {
+      "id": "4",
+      "genre_name": "Hài"
+    },
+    {
+      "id": "5",
+      "genre_name": "Tội phạm"
+    },
+    {
+      "id": "6",
+      "genre_name": "Tài liệu"
+    },
+    {
+      "id": "7",
+      "genre_name": "Chính kịch"
+    },
+    {
+      "id": "8",
+      "genre_name": "Gia đình"
+    },
+    {
+      "id": "9",
+      "genre_name": "Giả tưởng"
+    },
+    {
+      "id": "10",
+      "genre_name": "Lịch sử"
+    },
+    {
+      "id": "11",
+      "genre_name": "Kinh dị"
+    },
+    {
+      "id": "12",
+      "genre_name": "Âm nhạc"
+    },
+    {
+      "id": "13",
+      "genre_name": "Bí ẩn"
+    },
+    {
+      "id": "14",
+      "genre_name": "Lãng mạn"
+    },
+    {
+      "id": "15",
+      "genre_name": "Khoa học viễn tưởng"
+    },
+    {
+      "id": "16",
+      "genre_name": "Gay cấn"
+    },
+    {
+      "id": "17",
+      "genre_name": "Chiến tranh"
+    },
+    {
+      "id": "18",
+      "genre_name": "Miền Tây"
+    },
+    {
+      "id": "19",
+      "genre_name": "TV Movie"
+    }
+  ],
+  "movies": [
+    {
+      "title": "Dune: Part Two",
+      "description": "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
+      "author": "Denis Villeneuve",
+      "image": "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+      "trailer": "https://www.youtube.com/embed/Way9Dexny3w",
+      "genre": "Science Fiction, Adventure",
+      "country": "USA",
+      "actors": "Timothée Chalamet, Zendaya, Rebecca Ferguson",
+      "duration": 166,
+      "release_date": "2024-02-27T00:00:00.000Z",
+      "type": "2D",
+      "id": "1",
+      "created_at": "2026-01-05T02:40:09.393Z",
+      "updated_at": "2026-01-05T02:40:09.393Z"
+    },
+    {
+      "id": "2",
+      "title": "Kung Fu Panda 4",
+      "description": "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior.",
+      "author": "Mike Mitchell",
+      "image": "https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg",
+      "trailer": "https://www.youtube.com/embed/_inKs4eeHiI",
+      "type": "3D",
+      "genre": "Animation, Action, Family",
+      "country": "USA",
+      "actors": "Jack Black, Awkwafina, Viola Davis",
+      "duration": 94,
+      "release_date": "2024-03-02T00:00:00.000Z",
+      "created_at": "2024-03-05T00:00:00.000Z",
+      "updated_at": "2024-03-05T00:00:00.000Z"
+    },
+    {
+      "title": "Godzilla x Kong: The New Empire",
+      "description": "Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world.",
+      "author": "Adam Wingard",
+      "image": "https://www.bing.com/th/id/OIP.OCOslhU1srFM_5vAPeUD5wHaLH?w=144&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/lV1OOlGwExM",
+      "genre": "Action, Science Fiction",
+      "country": "USA",
+      "actors": "Rebecca Hall, Brian Tyree Henry, Dan Stevens",
+      "duration": 115,
+      "release_date": "2024-03-27T00:00:00.000Z",
+      "type": "2D",
+      "id": "3",
+      "created_at": "2026-01-05T00:05:37.868Z",
+      "updated_at": "2026-01-05T00:05:37.868Z"
+    },
+    {
+      "id": "4",
+      "title": "Civil War",
+      "description": "In the near future, a group of war journalists attempt to survive while reporting the truth as the United States stands on the brink of civil war.",
+      "author": "Alex Garland",
+      "image": "https://image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg",
+      "trailer": "https://www.youtube.com/embed/aDyQxtgKWPo",
+      "type": "2D",
+      "genre": "War, Action, Drama",
+      "country": "USA, UK",
+      "actors": "Kirsten Dunst, Wagner Moura, Cailee Spaeny",
+      "duration": 109,
+      "release_date": "2024-04-10T00:00:00.000Z",
+      "created_at": "2024-04-12T00:00:00.000Z",
+      "updated_at": "2024-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "5",
+      "title": "The Fall Guy",
+      "description": "Fresh off an almost career-ending accident, stuntman Colt Seavers has to track down a missing movie star, solve a conspiracy and try to win back the love of his life.",
+      "author": "David Leitch",
+      "image": "https://image.tmdb.org/t/p/w500/tSz1qsmSJon0rqjHBxXZmrotuse.jpg",
+      "trailer": "https://www.youtube.com/embed/j7jPnwVGdZ8",
+      "type": "2D",
+      "genre": "Action, Comedy",
+      "country": "USA",
+      "actors": "Ryan Gosling, Emily Blunt, Aaron Taylor-Johnson",
+      "duration": 126,
+      "release_date": "2024-04-24T00:00:00.000Z",
+      "created_at": "2024-04-25T00:00:00.000Z",
+      "updated_at": "2024-04-25T00:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "title": "Kingdom of the Planet of the Apes",
+      "description": "Several generations in the future following Caesar's reign, in which apes are the dominant species living harmoniously and humans have been reduced to living in the shadows.",
+      "author": "Wes Ball",
+      "image": "https://image.tmdb.org/t/p/w500/gKkl37BQuKTanygYQG1pyYgLVgf.jpg",
+      "trailer": "https://www.youtube.com/embed/Kdr5oedn7q8",
+      "type": "3D",
+      "genre": "Science Fiction, Adventure, Action",
+      "country": "USA",
+      "actors": "Owen Teague, Freya Allan, Kevin Durand",
+      "duration": 145,
+      "release_date": "2024-05-08T00:00:00.000Z",
+      "created_at": "2024-05-10T00:00:00.000Z",
+      "updated_at": "2024-05-10T00:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "title": "Oppenheimer",
+      "description": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+      "author": "Christopher Nolan",
+      "image": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+      "trailer": "https://www.youtube.com/embed/uYPbbksJxIg",
+      "type": "2D",
+      "genre": "Drama, History",
+      "country": "USA, UK",
+      "actors": "Cillian Murphy, Emily Blunt, Matt Damon",
+      "duration": 180,
+      "release_date": "2023-07-19T00:00:00.000Z",
+      "created_at": "2023-07-20T00:00:00.000Z",
+      "updated_at": "2023-07-20T00:00:00.000Z"
+    },
+    {
+      "id": "8",
+      "title": "Barbie",
+      "description": "Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.",
+      "author": "Greta Gerwig",
+      "image": "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+      "trailer": "https://www.youtube.com/embed/pBk4NYhWNMM",
+      "type": "2D",
+      "genre": "Comedy, Adventure, Fantasy",
+      "country": "USA",
+      "actors": "Margot Robbie, Ryan Gosling, America Ferrera",
+      "duration": 114,
+      "release_date": "2023-07-19T00:00:00.000Z",
+      "created_at": "2023-07-20T00:00:00.000Z",
+      "updated_at": "2023-07-20T00:00:00.000Z"
+    },
+    {
+      "id": "9",
+      "title": "Inside Out 2",
+      "description": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions!",
+      "author": "Kelsey Mann",
+      "image": "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+      "trailer": "https://www.youtube.com/embed/LEjhY15eCx0",
+      "type": "3D",
+      "genre": "Animation, Family, Drama",
+      "country": "USA",
+      "actors": "Amy Poehler, Maya Hawke, Kensington Tallman",
+      "duration": 96,
+      "release_date": "2024-06-12T00:00:00.000Z",
+      "created_at": "2024-06-15T00:00:00.000Z",
+      "updated_at": "2024-06-15T00:00:00.000Z"
+    },
+    {
+      "title": "Furiosa: A Mad Max Saga",
+      "description": "As the world fell, young Furiosa is snatched from the Green Place of Many Mothers and falls into the hands of a great Biker Horde led by the Warlord Dementus.",
+      "author": "George Miller",
+      "image": "https://www.bing.com/th/id/OIP.1Yl1xYRMLUnwCVT1VoGIfwHaJQ?w=151&h=182&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/XJMuhwVlca4",
+      "genre": "Action, Adventure, Science Fiction",
+      "country": "Australia, USA",
+      "actors": "Anya Taylor-Joy, Chris Hemsworth, Tom Burke",
+      "duration": 148,
+      "release_date": "2024-05-22T00:00:00.000Z",
+      "type": "2D",
+      "id": "10",
+      "created_at": "2026-01-05T00:06:31.029Z",
+      "updated_at": "2026-01-05T00:06:31.029Z"
+    },
+    {
+      "title": "Poor Things",
+      "description": "Brought back to life by an unorthodox scientist, a young woman runs off with a debauched lawyer on a whirlwind adventure across the continents.",
+      "author": "Yorgos Lanthimos",
+      "image": "https://www.bing.com/th/id/OIP.-0yw--iLMmYi5nEHOAAikgHaLG?w=149&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/RlbR5N6veqw",
+      "genre": "Science Fiction, Romance, Comedy",
+      "country": "Ireland, UK, USA",
+      "actors": "Emma Stone, Mark Ruffalo, Willem Dafoe",
+      "duration": 141,
+      "release_date": "2023-12-07T00:00:00.000Z",
+      "type": "2D",
+      "id": "11",
+      "created_at": "2026-01-05T00:07:00.431Z",
+      "updated_at": "2026-01-05T00:07:00.431Z"
+    },
+    {
+      "title": "The Zone of Interest",
+      "description": "The commandant of Auschwitz, Rudolf Höss, and his wife Hedwig, strive to build a dream life for their family in a house and garden next to the camp.",
+      "author": "Jonathan Glazer",
+      "image": "https://www.bing.com/th/id/OIP.HkWzOOfmM0g5084-4P5L4gHaLH?w=138&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/r-vfg3KkP4s",
+      "genre": "History, Drama, War",
+      "country": "UK, Poland, USA",
+      "actors": "Christian Friedel, Sandra Hüller, Johann Karthaus",
+      "duration": 105,
+      "release_date": "2023-12-15T00:00:00.000Z",
+      "type": "2D",
+      "id": "12",
+      "created_at": "2026-01-05T00:07:20.611Z",
+      "updated_at": "2026-01-05T00:07:20.611Z"
+    },
+    {
+      "title": "Anatomy of a Fall",
+      "description": "A woman is suspected of her husband's murder, and their blind son faces a moral dilemma as the sole witness.",
+      "author": "Justine Triet",
+      "image": "https://www.bing.com/th/id/OIP.ngC3JtVYpGN6PfaKjYhgBQHaLH?w=160&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/fTrsp5FGk18",
+      "genre": "Thriller, Mystery, Crime",
+      "country": "France",
+      "actors": "Sandra Hüller, Swann Arlaud, Milo Machado Graner",
+      "duration": 151,
+      "release_date": "2023-08-23T00:00:00.000Z",
+      "type": "2D",
+      "id": "13",
+      "created_at": "2026-01-05T00:07:41.860Z",
+      "updated_at": "2026-01-05T00:07:41.860Z"
+    },
+    {
+      "title": "Past Lives",
+      "description": "Nora and Hae Sung, two deeply connected childhood friends, are wrested apart after her family emigrates from South Korea. Two decades later, they are reunited in New York for one fateful week.",
+      "author": "Celine Song",
+      "image": "https://www.bing.com/th/id/OIP.Jsj-nvAU5ni59azFfK6yXgHaK9?w=151&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/kA244xewjcI",
+      "genre": "Romance, Drama",
+      "country": "USA",
+      "actors": "Greta Lee, Teo Yoo, John Magaro",
+      "duration": 105,
+      "release_date": "2023-06-02T00:00:00.000Z",
+      "type": "2D",
+      "id": "14",
+      "created_at": "2026-01-05T00:08:18.163Z",
+      "updated_at": "2026-01-05T00:08:18.163Z"
+    },
+    {
+      "id": "15",
+      "title": "Killers of the Flower Moon",
+      "description": "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one—until the FBI steps in to unravel the mystery.",
+      "author": "Martin Scorsese",
+      "image": "https://image.tmdb.org/t/p/w500/dB6Krk806zeqd0YNp2ngQ9zXteH.jpg",
+      "trailer": "https://www.youtube.com/embed/EP34Yoxs3FQ",
+      "type": "2D",
+      "genre": "Crime, Drama, History",
+      "country": "USA",
+      "actors": "Leonardo DiCaprio, Robert De Niro, Lily Gladstone",
+      "duration": 206,
+      "release_date": "2023-10-18T00:00:00.000Z",
+      "created_at": "2023-10-25T00:00:00.000Z",
+      "updated_at": "2023-10-25T00:00:00.000Z"
+    },
+    {
+      "title": "Wonka",
+      "description": "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream.",
+      "author": "Paul King",
+      "image": "https://www.bing.com/th/id/OIP.xK1acGahYRFIAol0LsIVpwHaK9?w=160&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/otNh9bTjXWg",
+      "genre": "Comedy, Family, Fantasy",
+      "country": "UK, USA",
+      "actors": "Timothée Chalamet, Calah Lane, Keegan-Michael Key",
+      "duration": 116,
+      "release_date": "2023-12-06T00:00:00.000Z",
+      "type": "2D",
+      "id": "16",
+      "created_at": "2026-01-05T00:08:38.526Z",
+      "updated_at": "2026-01-05T00:08:38.526Z"
+    },
+    {
+      "id": "17",
+      "title": "Aquaman and the Lost Kingdom",
+      "description": "Black Manta seeks revenge on Aquaman for his father's death. Wielding the Black Trident's power, he becomes a formidable foe. To defend Atlantis, Aquaman forges an alliance with his imprisoned brother.",
+      "author": "James Wan",
+      "image": "https://image.tmdb.org/t/p/w500/7lTnXOy0iNtBAdRP3TZvaKJ77F6.jpg",
+      "trailer": "https://www.youtube.com/embed/UGc5Tzz19UY",
+      "type": "3D",
+      "genre": "Action, Adventure, Fantasy",
+      "country": "USA",
+      "actors": "Jason Momoa, Patrick Wilson, Yahya Abdul-Mateen II",
+      "duration": 124,
+      "release_date": "2023-12-20T00:00:00.000Z",
+      "created_at": "2023-12-25T00:00:00.000Z",
+      "updated_at": "2023-12-25T00:00:00.000Z"
+    },
+    {
+      "id": "18",
+      "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "description": "64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12.",
+      "author": "Francis Lawrence",
+      "image": "https://image.tmdb.org/t/p/w500/mBaXZ95R2OxueZhvQbcEWy2DqyO.jpg",
+      "trailer": "https://www.youtube.com/embed/RDE6Uz73A7g",
+      "type": "2D",
+      "genre": "Drama, Science Fiction, Action",
+      "country": "USA",
+      "actors": "Tom Blyth, Rachel Zegler, Peter Dinklage",
+      "duration": 157,
+      "release_date": "2023-11-15T00:00:00.000Z",
+      "created_at": "2023-11-20T00:00:00.000Z",
+      "updated_at": "2023-11-20T00:00:00.000Z"
+    },
+    {
+      "id": "19",
+      "title": "Migration",
+      "description": "After a migrating duck family alights on their pond with thrilling tales of far-flung places, the Mallard family embarks on a family road trip, from New England, to New York City, to tropical Jamaica.",
+      "author": "Benjamin Renner",
+      "image": "https://image.tmdb.org/t/p/w500/ldfCF9RhR40mppkzmftxapaHeTo.jpg",
+      "trailer": "https://www.youtube.com/embed/cQfo0HJhCnE",
+      "type": "2D",
+      "genre": "Animation, Action, Adventure",
+      "country": "USA",
+      "actors": "Kumail Nanjiani, Elizabeth Banks, Keegan-Michael Key",
+      "duration": 83,
+      "release_date": "2023-12-06T00:00:00.000Z",
+      "created_at": "2023-12-10T00:00:00.000Z",
+      "updated_at": "2023-12-10T00:00:00.000Z"
+    },
+    {
+      "title": "Argylle",
+      "description": "When the plots of Elly Conway's books begin to mirror the covert actions of a real-life spy organization, quiet evenings at home become a thing of the past.",
+      "author": "Matthew Vaughn",
+      "image": "https://www.bing.com/th/id/OIP.9oiJ8uc9GGZ5cJ9R6kTnzgHaMh?w=160&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
+      "trailer": "https://www.youtube.com/embed/7mgu9mNZ8Hk",
+      "genre": "Action, Thriller, Comedy",
+      "country": "UK, USA",
+      "actors": "Bryce Dallas Howard, Sam Rockwell, Henry Cavill",
+      "duration": 139,
+      "release_date": "2024-01-31T00:00:00.000Z",
+      "type": "2D",
+      "id": "20",
+      "created_at": "2026-01-05T00:08:54.146Z",
+      "updated_at": "2026-01-05T00:08:54.146Z"
+    }
+  ],
+  "theaters": [
+    {
+      "id": "1",
+      "name": "Star Cinema Central",
+      "location": "123 Nguyen Hue, District 1, HCM",
+      "phone": "02838234567",
+      "created_at": "2020-01-01T00:00:00.000Z",
+      "updated_at": "2025-12-29T01:52:46.780Z"
+    },
+    {
+      "id": "2",
+      "name": "Star Cinema West",
+      "location": "456 Le Van Viet, District 9, HCM",
+      "phone": "02837345678",
+      "created_at": "2021-06-15T00:00:00.000Z",
+      "updated_at": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "cea0",
+      "name": "Demo1",
+      "location": "97 man thiee",
+      "phone": "01111111"
+    }
+  ],
+  "screens": [
+    {
+      "id": "1",
+      "name": "RAP1",
+      "seat_capacity": 20,
+      "theater_id": "1",
+      "created_at": "2025-12-29T14:14:20.464Z",
+      "updated_at": "2025-12-29T14:14:20.464Z"
+    },
+    {
+      "id": "2",
+      "name": "RAP2",
+      "seat_capacity": 10,
+      "theater_id": "2",
+      "created_at": "2025-12-30T00:39:00.339Z",
+      "updated_at": "2025-12-30T00:39:00.339Z"
+    },
+    {
+      "id": "3",
+      "name": "RAP3",
+      "seat_capacity": 1,
+      "theater_id": "1",
+      "created_at": "2025-12-30T00:44:33.783Z",
+      "updated_at": "2025-12-30T00:44:33.783Z"
+    },
+    {
+      "id": "44a6",
+      "name": "RAp1",
+      "seat_capacity": 10,
+      "theater_id": "2",
+      "created_at": "2025-12-30T02:04:33.880Z",
+      "updated_at": "2025-12-30T02:04:45.575Z"
+    },
+    {
+      "id": "37ea",
+      "name": "RAP2",
+      "seat_capacity": 20,
+      "theater_id": "2",
+      "created_at": "2025-12-30T02:05:43.069Z",
+      "updated_at": "2025-12-30T02:05:43.069Z"
+    },
+    {
+      "id": "6cb3",
+      "name": "Rap1",
+      "seat_capacity": 50,
+      "theater_id": "cea0",
+      "created_at": "2026-01-07T04:54:11.441Z",
+      "updated_at": "2026-01-07T04:54:11.441Z"
+    }
+  ],
+  "seats": [
+    {
+      "id": "1fb7",
+      "screen_id": "2",
+      "seat_number": "T1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2025-12-30T00:44:39.089Z",
+      "updated_at": "2025-12-30T00:44:39.089Z"
+    },
+    {
+      "id": "184d",
+      "screen_id": "3",
+      "seat_number": "A1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T00:11:45.761Z",
+      "updated_at": "2026-01-05T00:11:45.761Z"
+    },
+    {
+      "id": "2820",
+      "screen_id": "3",
+      "seat_number": "A2",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T00:11:51.122Z",
+      "updated_at": "2026-01-05T00:11:51.122Z"
+    },
+    {
+      "id": "74d5",
+      "screen_id": "3",
+      "seat_number": "B1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T00:11:59.089Z",
+      "updated_at": "2026-01-05T00:11:59.089Z"
+    },
+    {
+      "id": "1d0f",
+      "screen_id": "3",
+      "seat_number": "C1",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T00:12:05.066Z",
+      "updated_at": "2026-01-05T00:17:27.896Z"
+    },
+    {
+      "id": "ab84",
+      "screen_id": "1",
+      "seat_number": "A1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2025-12-29T14:14:31.989Z",
+      "updated_at": "2025-12-29T14:14:31.989Z"
+    },
+    {
+      "id": "b446",
+      "screen_id": "1",
+      "seat_number": "A2",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2025-12-30T00:44:39.089Z",
+      "updated_at": "2025-12-30T00:44:39.089Z"
+    },
+    {
+      "id": "c778",
+      "screen_id": "1",
+      "seat_number": "A3",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2025-12-30T02:04:41.080Z",
+      "updated_at": "2025-12-30T02:04:41.080Z"
+    },
+    {
+      "id": "x9k2",
+      "screen_id": "1",
+      "seat_number": "A4",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "m5p1",
+      "screen_id": "1",
+      "seat_number": "A5",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "z8r4",
+      "screen_id": "1",
+      "seat_number": "A6",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "q3v7",
+      "screen_id": "1",
+      "seat_number": "A7",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "w6n9",
+      "screen_id": "1",
+      "seat_number": "A8",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "e2j5",
+      "screen_id": "1",
+      "seat_number": "A9",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "t1y8",
+      "screen_id": "1",
+      "seat_number": "A10",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "k4b3",
+      "screen_id": "1",
+      "seat_number": "A11",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "u7d6",
+      "screen_id": "1",
+      "seat_number": "A12",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "i9g2",
+      "screen_id": "1",
+      "seat_number": "A13",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "o5h8",
+      "screen_id": "1",
+      "seat_number": "A14",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "l2x4",
+      "screen_id": "1",
+      "seat_number": "A15",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "p6c9",
+      "screen_id": "1",
+      "seat_number": "B1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "r8m1",
+      "screen_id": "1",
+      "seat_number": "B2",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "n4q7",
+      "screen_id": "1",
+      "seat_number": "B3",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "s2w5",
+      "screen_id": "1",
+      "seat_number": "B4",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "v9t3",
+      "screen_id": "1",
+      "seat_number": "B5",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "y6k8",
+      "screen_id": "1",
+      "seat_number": "B6",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "a1d4",
+      "screen_id": "1",
+      "seat_number": "B7",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "b7z2",
+      "screen_id": "1",
+      "seat_number": "B8",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "c3x6",
+      "screen_id": "1",
+      "seat_number": "B9",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "d9j5",
+      "screen_id": "1",
+      "seat_number": "B10",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "e5h1",
+      "screen_id": "1",
+      "seat_number": "B11",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "f2n9",
+      "screen_id": "1",
+      "seat_number": "B12",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "g8m4",
+      "screen_id": "1",
+      "seat_number": "B13",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "h4k7",
+      "screen_id": "1",
+      "seat_number": "B14",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "i2l6",
+      "screen_id": "1",
+      "seat_number": "B15",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "j9p3",
+      "screen_id": "1",
+      "seat_number": "C1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "k5t8",
+      "screen_id": "1",
+      "seat_number": "C2",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "l1y4",
+      "screen_id": "1",
+      "seat_number": "C3",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "m7u2",
+      "screen_id": "1",
+      "seat_number": "C4",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "n3i6",
+      "screen_id": "1",
+      "seat_number": "C5",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "o9o5",
+      "screen_id": "1",
+      "seat_number": "C6",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "p2a7",
+      "screen_id": "1",
+      "seat_number": "C7",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "q6s3",
+      "screen_id": "1",
+      "seat_number": "C8",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "r4d9",
+      "screen_id": "1",
+      "seat_number": "C9",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "s8f1",
+      "screen_id": "1",
+      "seat_number": "C10",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "t2g5",
+      "screen_id": "1",
+      "seat_number": "C11",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "u5h8",
+      "screen_id": "1",
+      "seat_number": "C12",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "v9j2",
+      "screen_id": "1",
+      "seat_number": "C13",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "w3k6",
+      "screen_id": "1",
+      "seat_number": "C14",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "x7l4",
+      "screen_id": "1",
+      "seat_number": "C15",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "y4z9",
+      "screen_id": "1",
+      "seat_number": "D1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "z8x1",
+      "screen_id": "1",
+      "seat_number": "D2",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "a2c5",
+      "screen_id": "1",
+      "seat_number": "D3",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "b6v8",
+      "screen_id": "1",
+      "seat_number": "D4",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "c9b4",
+      "screen_id": "1",
+      "seat_number": "D5",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "d3n7",
+      "screen_id": "1",
+      "seat_number": "D6",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "e7m2",
+      "screen_id": "1",
+      "seat_number": "D7",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "f0q6",
+      "screen_id": "1",
+      "seat_number": "D8",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "g4w9",
+      "screen_id": "1",
+      "seat_number": "D9",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "h8e3",
+      "screen_id": "1",
+      "seat_number": "D10",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "i2r5",
+      "screen_id": "1",
+      "seat_number": "D11",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "j6t8",
+      "screen_id": "1",
+      "seat_number": "D12",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "k9y4",
+      "screen_id": "1",
+      "seat_number": "D13",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "l3u7",
+      "screen_id": "1",
+      "seat_number": "D14",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "m7i1",
+      "screen_id": "1",
+      "seat_number": "D15",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "n2o5",
+      "screen_id": "1",
+      "seat_number": "E1",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "o5p9",
+      "screen_id": "1",
+      "seat_number": "E2",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "p8a2",
+      "screen_id": "1",
+      "seat_number": "E3",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "q1s6",
+      "screen_id": "1",
+      "seat_number": "E4",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "r4d8",
+      "screen_id": "1",
+      "seat_number": "E5",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "s7f3",
+      "screen_id": "1",
+      "seat_number": "E6",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "t0g9",
+      "screen_id": "1",
+      "seat_number": "E7",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "u3h5",
+      "screen_id": "1",
+      "seat_number": "E8",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "v6j1",
+      "screen_id": "1",
+      "seat_number": "E9",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "w9k4",
+      "screen_id": "1",
+      "seat_number": "E10",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "x2l7",
+      "screen_id": "1",
+      "seat_number": "E11",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "y5z3",
+      "screen_id": "1",
+      "seat_number": "E12",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "z8x6",
+      "screen_id": "1",
+      "seat_number": "E13",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "a1c2",
+      "screen_id": "1",
+      "seat_number": "E14",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "b4v8",
+      "screen_id": "1",
+      "seat_number": "E15",
+      "type": "STANDARD",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "c7b5",
+      "screen_id": "1",
+      "seat_number": "F1",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "d0n1",
+      "screen_id": "1",
+      "seat_number": "F2",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "e3m6",
+      "screen_id": "1",
+      "seat_number": "F3",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "f6o9",
+      "screen_id": "1",
+      "seat_number": "F4",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "g9p2",
+      "screen_id": "1",
+      "seat_number": "F5",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "h2q5",
+      "screen_id": "1",
+      "seat_number": "F6",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "i5r8",
+      "screen_id": "1",
+      "seat_number": "F7",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "j8s1",
+      "screen_id": "1",
+      "seat_number": "F8",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "k1t4",
+      "screen_id": "1",
+      "seat_number": "F9",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "l4u7",
+      "screen_id": "1",
+      "seat_number": "F10",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "m7v3",
+      "screen_id": "1",
+      "seat_number": "F11",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "n0w6",
+      "screen_id": "1",
+      "seat_number": "F12",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "o3x9",
+      "screen_id": "1",
+      "seat_number": "F13",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "p6y2",
+      "screen_id": "1",
+      "seat_number": "F14",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "q9z5",
+      "screen_id": "1",
+      "seat_number": "F15",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "r2a8",
+      "screen_id": "1",
+      "seat_number": "G1",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "s5b1",
+      "screen_id": "1",
+      "seat_number": "G2",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "t8c4",
+      "screen_id": "1",
+      "seat_number": "G3",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "u1d7",
+      "screen_id": "1",
+      "seat_number": "G4",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "v4e3",
+      "screen_id": "1",
+      "seat_number": "G5",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "w7f6",
+      "screen_id": "1",
+      "seat_number": "G6",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "x0g9",
+      "screen_id": "1",
+      "seat_number": "G7",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "y3h2",
+      "screen_id": "1",
+      "seat_number": "G8",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "z6i5",
+      "screen_id": "1",
+      "seat_number": "G9",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "a9j8",
+      "screen_id": "1",
+      "seat_number": "G10",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "b2k1",
+      "screen_id": "1",
+      "seat_number": "G11",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "c5l4",
+      "screen_id": "1",
+      "seat_number": "G12",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "d8m7",
+      "screen_id": "1",
+      "seat_number": "G13",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "e1n3",
+      "screen_id": "1",
+      "seat_number": "G14",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "f4o6",
+      "screen_id": "1",
+      "seat_number": "G15",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "g7p9",
+      "screen_id": "1",
+      "seat_number": "H1",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "h3q2",
+      "screen_id": "1",
+      "seat_number": "H2",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "i6r5",
+      "screen_id": "1",
+      "seat_number": "H3",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "j9s8",
+      "screen_id": "1",
+      "seat_number": "H4",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "k2t1",
+      "screen_id": "1",
+      "seat_number": "H5",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "l5u4",
+      "screen_id": "1",
+      "seat_number": "H6",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "m8v7",
+      "screen_id": "1",
+      "seat_number": "H7",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "n1w3",
+      "screen_id": "1",
+      "seat_number": "H8",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "o4x6",
+      "screen_id": "1",
+      "seat_number": "H9",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "p7y9",
+      "screen_id": "1",
+      "seat_number": "H10",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "q3z2",
+      "screen_id": "1",
+      "seat_number": "H11",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "r6a5",
+      "screen_id": "1",
+      "seat_number": "H12",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "s9b8",
+      "screen_id": "1",
+      "seat_number": "H13",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "t2c1",
+      "screen_id": "1",
+      "seat_number": "H14",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "u5d4",
+      "screen_id": "1",
+      "seat_number": "H15",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "v8e7",
+      "screen_id": "1",
+      "seat_number": "I1",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "w1f3",
+      "screen_id": "1",
+      "seat_number": "I2",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "x4g6",
+      "screen_id": "1",
+      "seat_number": "I3",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "y7h9",
+      "screen_id": "1",
+      "seat_number": "I4",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "z3i2",
+      "screen_id": "1",
+      "seat_number": "I5",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "a6j5",
+      "screen_id": "1",
+      "seat_number": "I6",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "b9k8",
+      "screen_id": "1",
+      "seat_number": "I7",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "c2l1",
+      "screen_id": "1",
+      "seat_number": "I8",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "d5m4",
+      "screen_id": "1",
+      "seat_number": "I9",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "e8n7",
+      "screen_id": "1",
+      "seat_number": "I10",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "f1o3",
+      "screen_id": "1",
+      "seat_number": "I11",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "g4p6",
+      "screen_id": "1",
+      "seat_number": "I12",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "h7q9",
+      "screen_id": "1",
+      "seat_number": "I13",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "i3r2",
+      "screen_id": "1",
+      "seat_number": "I14",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "j6s5",
+      "screen_id": "1",
+      "seat_number": "I15",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "k9t8",
+      "screen_id": "1",
+      "seat_number": "J1",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "l2u1",
+      "screen_id": "1",
+      "seat_number": "J2",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "m5v4",
+      "screen_id": "1",
+      "seat_number": "J3",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "n8w7",
+      "screen_id": "1",
+      "seat_number": "J4",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "o1x3",
+      "screen_id": "1",
+      "seat_number": "J5",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "p4y6",
+      "screen_id": "1",
+      "seat_number": "J6",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "q7z9",
+      "screen_id": "1",
+      "seat_number": "J7",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "r0a2",
+      "screen_id": "1",
+      "seat_number": "J8",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "s3b5",
+      "screen_id": "1",
+      "seat_number": "J9",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "t6c8",
+      "screen_id": "1",
+      "seat_number": "J10",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "u9d1",
+      "screen_id": "1",
+      "seat_number": "J11",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "v2e4",
+      "screen_id": "1",
+      "seat_number": "J12",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "w5f7",
+      "screen_id": "1",
+      "seat_number": "J13",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "x8g3",
+      "screen_id": "1",
+      "seat_number": "J14",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "y1h6",
+      "screen_id": "1",
+      "seat_number": "J15",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "z4i9",
+      "screen_id": "1",
+      "seat_number": "K1",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "a7j2",
+      "screen_id": "1",
+      "seat_number": "K2",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "b3k5",
+      "screen_id": "1",
+      "seat_number": "K3",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "c6l8",
+      "screen_id": "1",
+      "seat_number": "K4",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "d9m1",
+      "screen_id": "1",
+      "seat_number": "K5",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "e2n4",
+      "screen_id": "1",
+      "seat_number": "K6",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "f5o7",
+      "screen_id": "1",
+      "seat_number": "K7",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "g8p3",
+      "screen_id": "1",
+      "seat_number": "K8",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "h1q6",
+      "screen_id": "1",
+      "seat_number": "K9",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "i4r9",
+      "screen_id": "1",
+      "seat_number": "K10",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "j7s2",
+      "screen_id": "1",
+      "seat_number": "K11",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "k3t5",
+      "screen_id": "1",
+      "seat_number": "K12",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "l6u8",
+      "screen_id": "1",
+      "seat_number": "K13",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "m9v1",
+      "screen_id": "1",
+      "seat_number": "K14",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    },
+    {
+      "id": "n2w4",
+      "screen_id": "1",
+      "seat_number": "K15",
+      "type": "VIP",
+      "is_variable": true,
+      "created_at": "2026-01-05T03:00:00.000Z",
+      "updated_at": "2026-01-05T03:00:00.000Z"
+    }
+  ],
+  "showtimes": [
+    {
+      "id": "1",
+      "movie_id": 1,
+      "screen_id": 1,
+      "start_time": "2025-12-25T14:00:00.000",
+      "end_time": "2025-12-25T16:46:00.000",
+      "created_at": "2025-12-01T00:00:00.000",
+      "updated_at": "2025-12-01T00:00:00.000"
+    },
+    {
+      "id": "2",
+      "movie_id": 1,
+      "screen_id": 1,
+      "start_time": "2025-12-25T18:00:00.000",
+      "end_time": "2025-12-25T20:46:00.000",
+      "created_at": "2025-12-01T00:00:00.000",
+      "updated_at": "2025-12-01T00:00:00.000"
+    },
+    {
+      "id": "3",
+      "movie_id": 2,
+      "screen_id": 2,
+      "start_time": "2025-12-26T20:00:00.000",
+      "end_time": "2025-12-26T21:34:00.000",
+      "created_at": "2025-12-01T00:00:00.000",
+      "updated_at": "2025-12-01T00:00:00.000"
+    },
+    {
+      "id": "f811",
+      "movie_id": "3",
+      "screen_id": "37ea",
+      "start_time": "2025-12-30T07:00:00.000",
+      "end_time": "2025-12-30T08:55:00.000",
+      "created_at": "2025-12-30T02:05:52.990",
+      "updated_at": "2025-12-30T02:05:52.990"
+    },
+    {
+      "id": "1fdb",
+      "movie_id": "2",
+      "screen_id": "3",
+      "start_time": "2026-01-06T03:00:00.000Z",
+      "end_time": "2026-01-06T04:34:00.000Z",
+      "created_at": "2026-01-05T00:10:57.653Z",
+      "updated_at": "2026-01-05T00:10:57.653Z"
+    },
+    {
+      "id": "4b39",
+      "movie_id": "1",
+      "screen_id": "1",
+      "start_time": "2026-01-07T02:00:00.000Z",
+      "end_time": "2026-01-07T04:46:00.000Z",
+      "created_at": "2026-01-07T00:36:05.569Z",
+      "updated_at": "2026-01-07T00:36:05.569Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1767144998922",
+      "user_id": "95ff",
+      "showtime_id": "1",
+      "total_seat": 1,
+      "total_price_movie": 75000,
+      "created_at": "2025-12-31T01:36:38.922Z"
+    },
+    {
+      "id": "1767145926687",
+      "user_id": "95ff",
+      "showtime_id": "1",
+      "total_seat": 1,
+      "total_price_movie": 75000,
+      "created_at": "2025-12-31T01:52:06.687Z"
+    },
+    {
+      "id": "1767146593395",
+      "user_id": "95ff",
+      "showtime_id": "1",
+      "total_seat": 1,
+      "total_price_movie": 75000,
+      "created_at": "2025-12-31T02:03:13.395Z"
+    },
+    {
+      "id": "1767576759500",
+      "user_id": "95ff",
+      "showtime_id": "1fdb",
+      "total_seat": 2,
+      "total_price_movie": 270000,
+      "created_at": "2026-01-05T01:32:39.500Z"
+    },
+    {
+      "id": "1767577211306",
+      "user_id": "95ff",
+      "showtime_id": "1fdb",
+      "total_seat": 1,
+      "total_price_movie": 120000,
+      "created_at": "2026-01-05T01:40:11.306Z"
+    },
+    {
+      "id": "1767761304707",
+      "user_id": "5dc9",
+      "showtime_id": "1",
+      "total_seat": 1,
+      "total_price_movie": 50000,
+      "created_at": "2026-01-07T04:48:24.707Z"
+    }
+  ],
+  "booking_seats": [
+    {
+      "id": "c892",
+      "booking_id": "1767146593395",
+      "seat_id": "ab84",
+      "quantity": 1,
+      "created_at": "2025-12-31T02:03:21.272Z",
+      "updated_at": "2025-12-31T02:03:21.272Z"
+    },
+    {
+      "id": "78f4",
+      "booking_id": "1767576759500",
+      "seat_id": "2820",
+      "quantity": 1,
+      "created_at": "2026-01-05T01:34:38.693Z",
+      "updated_at": "2026-01-05T01:34:38.693Z"
+    },
+    {
+      "id": "1644",
+      "booking_id": "1767576759500",
+      "seat_id": "1d0f",
+      "quantity": 1,
+      "created_at": "2026-01-05T01:34:38.695Z",
+      "updated_at": "2026-01-05T01:34:38.695Z"
+    },
+    {
+      "id": "ea26",
+      "booking_id": "1767761304707",
+      "seat_id": "b446",
+      "quantity": 1,
+      "created_at": "2026-01-07T04:48:39.034Z",
+      "updated_at": "2026-01-07T04:48:39.034Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "2bc1",
+      "booking_id": "1767146593395",
+      "payment_method": "VietQR",
+      "payment_status": "COMPLETED",
+      "amount": 75000,
+      "created_at": "2025-12-31T02:03:13.733Z",
+      "updated_at": "2025-12-31T02:03:21.259Z",
+      "payment_time": "2025-12-31T02:03:21.259Z"
+    },
+    {
+      "id": "7f07",
+      "booking_id": "1767576759500",
+      "payment_method": "VietQR",
+      "payment_status": "COMPLETED",
+      "amount": 270000,
+      "created_at": "2026-01-05T01:32:39.790Z",
+      "updated_at": "2026-01-05T01:34:38.675Z",
+      "payment_time": "2026-01-05T01:34:38.675Z"
+    },
+    {
+      "id": "9aba",
+      "booking_id": "1767577211306",
+      "payment_method": "CASH",
+      "payment_status": "PENDING",
+      "amount": 120000,
+      "created_at": "2026-01-05T01:40:11.614Z",
+      "updated_at": "2026-01-05T01:40:11.614Z"
+    },
+    {
+      "id": "0c80",
+      "booking_id": "1767761304707",
+      "payment_method": "VietQR",
+      "payment_status": "COMPLETED",
+      "amount": 50000,
+      "created_at": "2026-01-07T04:48:26.728Z",
+      "updated_at": "2026-01-07T04:48:39.007Z",
+      "payment_time": "2026-01-07T04:48:39.007Z"
+    }
+  ],
+  "ticket_prices": [
+    {
+      "id": "071f",
+      "type_seat": "SWEETBOX",
+      "type_movie": "3D",
+      "day_type": 0,
+      "price": 180000,
+      "start_time": "2020-01-05T00:43:00.000Z",
+      "end_time": "2030-01-10T00:43:00.000Z"
+    },
+    {
+      "type_seat": "SWEETBOX",
+      "type_movie": "3D",
+      "day_type": 1,
+      "price": 200000,
+      "start_time": "2020-01-05T00:47:00.000Z",
+      "end_time": "2030-01-10T00:47:00.000Z",
+      "id": "6abc"
+    },
+    {
+      "id": "775a",
+      "type_seat": "VIP",
+      "type_movie": "3D",
+      "day_type": 0,
+      "price": 150000,
+      "start_time": "2020-01-05T00:48:00.000Z",
+      "end_time": "2030-01-10T00:48:00.000Z"
+    },
+    {
+      "id": "5232",
+      "type_seat": "VIP",
+      "type_movie": "3D",
+      "day_type": 1,
+      "price": 165000,
+      "start_time": "2020-01-05T00:48:00.000Z",
+      "end_time": "2030-01-10T00:48:00.000Z"
+    },
+    {
+      "type_seat": "STANDARD",
+      "type_movie": "3D",
+      "day_type": 0,
+      "price": 120000,
+      "start_time": "2020-01-05T00:50:00.000Z",
+      "end_time": "2030-01-10T00:50:00.000Z",
+      "id": "5775"
+    },
+    {
+      "id": "e429",
+      "type_seat": "STANDARD",
+      "type_movie": "3D",
+      "day_type": 1,
+      "price": 135000,
+      "start_time": "2020-01-05T00:51:00.000Z",
+      "end_time": "2030-01-10T00:51:00.000Z"
+    },
+    {
+      "id": "69fe",
+      "type_seat": "STANDARD",
+      "type_movie": "2D",
+      "day_type": 0,
+      "price": 50000,
+      "start_time": "2020-01-05T00:51:00.000Z",
+      "end_time": "2030-01-10T00:51:00.000Z"
+    },
+    {
+      "id": "56e6",
+      "type_seat": "STANDARD",
+      "type_movie": "2D",
+      "day_type": 1,
+      "price": 60000,
+      "start_time": "2020-01-05T00:52:00.000Z",
+      "end_time": "2030-01-10T00:52:00.000Z"
+    },
+    {
+      "id": "82d8",
+      "type_seat": "VIP",
+      "type_movie": "2D",
+      "day_type": 0,
+      "price": 70000,
+      "start_time": "2020-01-05T00:52:00.000Z",
+      "end_time": "2030-01-10T00:52:00.000Z"
+    },
+    {
+      "id": "df2d",
+      "type_seat": "VIP",
+      "type_movie": "2D",
+      "day_type": 1,
+      "price": 80000,
+      "start_time": "2020-01-05T00:53:00.000Z",
+      "end_time": "2030-01-10T00:53:00.000Z"
+    },
+    {
+      "id": "0704",
+      "type_seat": "SWEETBOX",
+      "type_movie": "2D",
+      "day_type": 0,
+      "price": 90000,
+      "start_time": "2020-01-05T00:53:00.000Z",
+      "end_time": "2030-01-10T00:53:00.000Z"
+    },
+    {
+      "id": "684f",
+      "type_seat": "SWEETBOX",
+      "type_movie": "2D",
+      "day_type": 1,
+      "price": 100000,
+      "start_time": "2020-01-05T00:53:00.000Z",
+      "end_time": "2030-01-10T00:54:00.000Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "Liên hoan phim Châu Âu tại Trung tâm Chiếu phim Quốc gia",
+      "description": "Từ 14–27.11.2024, Liên hoan phim Châu Âu (EUFF) bởi Phái đoàn EU tại Việt Nam, hợp tác cùng các Đại sứ quán và viện văn hóa của các Quốc gia Thành viên EU, cùng khách mời đặc biệt Đại sứ quán Ukraine tại Việt Nam sẽ diễn ra tại Trung tâm Chiếu phim Quốc gia, Hà Nội",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events2_mgdejt.png",
+      "date": "14:57 12/11/2024",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623100/eventpic_q4y3i9.png",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766628998/events1-pic2_rc6f8y.png",
+      "detailTittle": "Liên hoan phim Châu Âu tại Trung tâm Chiếu phim Quốc gia",
+      "venues": [
+        "Từ 14–27.11.2024, Liên hoan phim Châu Âu (EUFF) bởi Phái đoàn EU tại Việt Nam, hợp tác cùng các Đại sứ quán và viện văn hóa của các Quốc gia Thành viên EU,",
+        "cùng khách mời đặc biệt Đại sứ quán Ukraine tại Việt Nam sẽ diễn ra tại Trung tâm Chiếu phim Quốc gia, Hà Nội. Khai mạc Liên hoan phim sẽ được tổ chức vào",
+        "20h ngày 14/11/2024 (Thứ 5) với bộ phim “The Peasants” (Nông dân).",
+        "Liên hoan phim Châu Âu năm nay sẽ trình chiếu 18 bộ phim, là 18 cuộc gặp gỡ với những nhân vật đời thường trong những cảnh huống bất thường. Rong ruổi",
+        "theo chân họ, khán giả sẽ được đi vào hành trình khám phá sâu thẳm nội tâm, tới những làng quê, các cung điện phong kiến, tới một thành phố mê cung, một",
+        "thành phố hậu chiến, một thành phố cổ tích, và rất nhiều các khung cảnh khác. Tựa như truyền thống của điện ảnh là tấm gương phóng chiếu đời sống, các bộ",
+        "phim giúp chúng ta nhìn về chính cuộc đời của mình, mơ tới chân trời khác, hay ngẫm suy về những quyết định lớn.",
+        "Vé mời MIỄN PHÍ tại Hà Nội sẽ được phát từ ngày 05/11/2024 tại những địa điểm dưới đây:",
+        "- Phái đoàn EU tại Việt Nam – Tầng 24, Tòa Tây (Sảnh Văn phòng), Trung tâm Lotte, 54 Liễu Giai, Ba Đình",
+        "Giờ mở cửa: 09:00–12:30; 13:30–17:00 (thứ Hai–thứ Sáu)",
+        "- Viện Goethe Hà Nội – 56-58-60 Nguyễn Thái Học, Ba Đình",
+        "Giờ mở cửa: 08:30–12:00; 13:00–18:00 (thứ Hai–thứ Sáu)",
+        "Mỗi khán giả được nhận bốn vé tự chọn. Khán giả khi tới nhận vé không cần đăng ký trước.",
+        "Thông tin về lịch chiếu, nội dung phim xem tại website chính thức: https://www.eeas.europa.eu/euff-vietnam-2024_vi?s=184",
+        "Đón xem các buổi chiếu diễn ra trong khuôn khổ của LHP tại Hà Nội từ 14–27.11.2024."
+      ]
+    },
+    {
+      "id": "2",
+      "title": "LIÊN HOAN PHIM QUỐC TẾ HÀ NỘI LẦN THỨ VII (HANIFF VII)",
+      "description": "Liên hoan Phim quốc tế Hà Nội lần thứ VII là sự kiện văn hóa nghệ thuật, tôn vinh các tác phẩm điện ảnh có giá trị nghệ thuật cao, giàu tính nhân văn, có dấu ấn sáng tạo nổi bật, độc đáo của quốc tế và Việt Nam",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events1_lyfp0v.png",
+      "date": "09:23 06/11/2024",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766713260/events2-pic2_l7ocb8.jpg",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766713262/events2-pic1_l9gonq.jpg",
+      "venues": [
+        "Thời gian: 07–11/11/2024",
+        "Địa điểm: Hà Nội",
+        "Chủ đề: Điện ảnh Sáng tạo – Cất cánh",
+        "Số lượng phim: 117 phim từ 51 quốc gia và vùng lãnh thổ",
+        "Lễ khai mạc & bế mạc: Nhà hát Hồ Gươm",
+        "Cụm rạp chiếu: Trung tâm Chiếu phim Quốc gia",
+        "Cụm rạp chiếu: CGV Mipec Tower Đống Đa",
+        "Cụm rạp chiếu: BHD Star Vincom Phạm Ngọc Thạch",
+        "Hoạt động nổi bật: Chợ Dự án (07/11)",
+        "Phim Việt Nam dự thi: Ngày xưa có một chuyện tình",
+        "Phim đạt giải cao: Hard Shell (Iran)",
+        "Kênh truyền hình: VTV2 (Lễ bế mạc)"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "LÊN TIẾNG CHO MAI SAU: LIÊN HOAN PHIM TÀI LIỆU VỀ PHÁT TRIỂN BỀN VỮNG (30.10.2024 - 03.11.2024)",
+      "description": "Cảm nhận vẻ đẹp của điện ảnh Ý qua những tác phẩm kinh điển.",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events3_eoiyl0.png",
+      "date": "14:51 28/10/2024",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766711512/events3-pic1_okebmf.jpg",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766711511/events3-pic2_jzps52.jpg",
+      "venues": [
+        "Thể loại: Phim tài liệu",
+        "Chủ đề: Phát triển bền vững",
+        "Thời gian: 30/10 – 03/11/2024",
+        "Đối tượng: Cộng đồng, giới trẻ, nhà làm phim",
+        "Hoạt động: Chiếu phim và tọa đàm"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Liên hoan phim Đức KinoFest tại Hà Nội",
+      "description": "Liên hoan phim Đức: KinoFest là Liên hoan phim thường niên của Viện Goethe tại Đông Nam Á....",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events4_vcyup6.png",
+      "date": "13:51 18/09/2024",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766715545/events4-pic1_rdvcog.jpg",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766715546/events4-pic2_oetmlq.jpg",
+      "venues": [
+        "Tên sự kiện: KinoFest 2024",
+        "Đơn vị tổ chức: Viện Goethe",
+        "Thời gian: Tháng 10–11/2024",
+        "Chủ đề: Gia đình trong Kỷ nguyên Số",
+        "Địa điểm: Hà Nội, TP.HCM, Đà Nẵng, Cần Thơ, Đà Lạt",
+        "Kỷ niệm: 50 năm quan hệ Việt – Đức"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Liên hoan phim Italia 2024 (23/9 – 28/9/2024) tại Trung tâm Chiếu phim Quốc gia",
+      "description": "Liên hoan phim Italia 2024 (23/9 – 28/9/2024) tại Trung tâm Chiếu phim Quốc gia",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events5_usiikw.png",
+      "date": "09:32 09/10/2024",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766971634/events5-pic2_s0bdot.png",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766971633/events5-pic1_twf1n4.jpg",
+      "venues": [
+        "Liên hoan phim Italia 2024 đã được tổ chức tại Trung tâm Chiếu phim Quốc gia (87 Láng Hạ, Hà Nội) từ ngày 23/09 đến 28/09/2024. Sự kiện do Đại sứ quán Italia tại Hà Nội phối hợp với Liên hoan phim Châu Á tại Rome thực hiện nhằm giới thiệu những góc nhìn đương đại về xã hội và điện ảnh Ý.",
+        "Thông tin chi tiết sự kiện 2024:",
+        "Thời gian chiếu: 19:30 hàng ngày.",
+        "Danh sách 6 phim trình chiếu:",
+        "Tôi là thuyền trưởng (Io Capitano) – 23/09.",
+        "Nhà máy cán nguội (Palazzina Laf) – 24/09.",
+        "Zamora – 25/09.",
+        "Mùa hè cùng Irene (Quell' Estate Con Irene) – 26/09.",
+        "Bắt cóc (Rapito) – 27/09.",
+        "Giấc mơ không thành hiện thực (La Chimera) – 28/09.",
+        "Hoạt động phụ trợ: Sau mỗi buổi chiếu đều có phần hỏi đáp (Q&A) với Giám đốc Nghệ thuật Antonio Termenini.",
+        "Lưu ý: Sự kiện năm 2024 đã kết thúc. Gần đây nhất, Liên hoan phim Italia 2025 cũng đã diễn ra tại cùng địa điểm từ ngày 20/10 đến 25/10/2025 với giá vé 30.000 VNĐ. Bạn có thể theo dõi thông tin các kỳ liên hoan tiếp theo tại trang Đại sứ quán Italia tại Hà Nội."
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Chương trình phim “Salon Điện ảnh Đài Loan 2024” từ 08/09 – 14/09/2024",
+      "description": "Chương trình chiếu phim “Salon Điện ảnh Đài Loan 2024” với bộ phim thấm đẫm hơi thở cuộc sống hiện đại, xoay quanh chủ đề phụ nữ, trẻ em và gia đình đã được đề cử cũng như đạt nhiều giải thưởng của điện ảnh Đài Loan sẽ được giới thiệu trong chương trình lần này. Đặc biệt là tác phẩm điện ảnh từng thống trị bảng xếp hạng phòng vé của Đài Loan năm vừa qua – “Chuyện tôi và ma quỷ thành người một nhà” – 1 trong 10 tác phẩm có doanh thu cao nhất lịch sử điện ảnh Đài Loan.",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events6_y1ooaz.png",
+      "date": "22/12/2024",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973291/events6-pic1_xgdrec.png",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973291/events6-pic2_sssul0.jpg",
+      "venues": [
+        "Chương trình \"Salon Điện ảnh Đài Loan 2024\" với chủ đề \"Let Love Out Loud\" diễn ra từ ngày 08/09 đến 14/09/2024 tại Hà Nội. Đây là lần thứ 4 sự kiện được tổ chức bởi Văn phòng Kinh tế và Văn hóa Đài Bắc tại Việt Nam (TECO) phối hợp cùng Trung tâm Chiếu phim Quốc gia và Trường Cao đẳng Nghệ thuật Hà Nội.",
+        "Thông tin nổi bật",
+        "Nội dung: Chùm 6 phim điện ảnh hiện đại Đài Loan xoay quanh các chủ đề về phụ nữ, trẻ em, gia đình và những vấn đề xã hội đương đại.",
+        "Phim tiêu biểu:",
+        "Marry My Dead Body: Tác phẩm hài hành động nổi tiếng với sự góp mặt của Hứa Quang Hán.",
+        "Abiding Nowhere: Phim của đạo diễn Thái Minh Lượng, từng được trình chiếu tại Liên hoan phim Berlin 2024.",
+        "Cách thức nhận vé: Khán giả nhận vé mời miễn phí trực tiếp tại quầy tầng 21 tòa nhà PVI (Số 1 Phạm Văn Bạch) hoặc tại quầy vé của Trung tâm Chiếu phim Quốc gia."
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Tuần lễ phim Iran tại Trung tâm Chiếu phim Quốc gia (10/1 – 14/1/2024)",
+      "description": "Trải nghiệm điện ảnh Tây Ban Nha với những câu chuyện đầy cảm xúc.",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766713791/events7_u9qamp.png",
+      "date": "09:55 08/01/2024",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766972094/events6-pic2_hu0lav.jpg",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766972093/events6-pic1_crzbjx.jpg",
+      "venues": [
+        "Sự kiện \"Tuần lễ phim Iran\" (10-14/1/2024) tại Trung tâm Chiếu phim Quốc gia là một chương trình văn hóa ý nghĩa, được tổ chức nhân dịp 50 năm thiết lập quan hệ ngoại giao Việt Nam - Iran, giới thiệu các tác phẩm điện ảnh Iran đặc sắc, kết nối văn hóa và tăng cường tình hữu nghị giữa hai nước, với buổi khai mạc diễn ra tối 10/1/2024.",
+        "Thông tin chi tiết về sự kiện:",
+        "Tên sự kiện: Tuần lễ phim Iran.",
+        "Thời gian: 10/1 – 14/1/2024.",
+        "Địa điểm: Trung tâm Chiếu phim Quốc gia.",
+        "Mục đích: Kỷ niệm 50 năm quan hệ ngoại giao Việt Nam - Iran, thúc đẩy giao lưu văn hóa.",
+        "Khởi đầu: Buổi khai mạc được tổ chức vào tối ngày 10/1/2024.",
+        "Sự kiện này mang đến cơ hội cho khán giả Việt Nam tiếp cận điện ảnh Iran, tìm hiểu thêm về đất nước, con người và văn hóa Iran thông qua những thước phim."
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Khai mạc LHP Nhật Bản tại Trung tâm Chiếu phim Quốc gia",
+      "description": "LHP",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events8_xn2wfz.png",
+      "date": "09:45 13/12/2023",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973517/events8-pic1_sjpecy.jpg",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973517/events8-pic2_trd0ql.jpg",
+      "venues": [
+        "Lễ khai mạc Liên hoan phim Nhật Bản 2025 tại Hà Nội đã diễn ra vào lúc 19h30 ngày 12/12/2025 tại Trung tâm Chiếu phim Quốc gia (87 Láng Hạ).",
+        "Dưới đây là các thông tin chính về sự kiện:",
+        "Thời gian tổ chức: Từ ngày 12/12/2025 đến 27/12/2025.",
+        "Giá vé: Đồng giá 50.000 VNĐ/vé.",
+        "Nội dung nổi bật:",
+        "Sự kiện năm nay (mùa thứ 17) giới thiệu 10 tác phẩm điện ảnh đa dạng từ hài hước, kịch tính đến khoa học siêu thực.",
+        "Đạo diễn Hideki Takeuchi (phim Cells At Work!) đã trực tiếp đến Hà Nội để giao lưu cùng khán giả.",
+        "Đêm khai mạc có sự góp mặt của nữ diễn viên trẻ Hồ Thu Anh.",
+        "Cách thức mua vé: Khán giả có thể mua vé trực tiếp tại quầy hoặc trực tuyến qua trang web của Trung tâm Chiếu phim Quốc gia.",
+        "Thông tin chi tiết về lịch chiếu và các hoạt động đi kèm thường xuyên được cập nhật trên Fanpage Liên hoan phim Nhật Bản tại Việt Nam."
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Tuần lễ phim Liên minh Thái Bình Dương",
+      "description": "Tuần lễ phim Liên minh Thái Bình Dương",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623654/events9_kpdxso.png",
+      "date": "11:08 05/12/2023",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973758/events9-pic1_i5pqq0.jpg",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973758/events9-pic2_jucclz.jpg",
+      "venues": [
+        "Tuần lễ phim Liên minh Thái Bình Dương (Pacific Alliance Film Week) là sự kiện văn hóa giới thiệu điện ảnh các nước thành viên (Chile, Colombia, Mexico, Peru) tại Việt Nam, thường do Bộ VHTTDL phối hợp với Đại sứ quán các nước tổ chức, từng diễn ra ở Hà Nội (2017) và Đà Nẵng (2019) để quảng bá văn hóa, nghệ thuật và tăng cường hợp tác giữa các quốc gia, trưng bày phim và triển lãm ảnh độc đáo.",
+        "Thông tin chi tiết:",
+        "Mục đích: Tăng cường giao lưu văn hóa, giới thiệu điện ảnh và văn hóa đặc sắc của Chile, Colombia, Mexico, Peru đến khán giả Việt Nam.",
+        "Nội dung: Chiếu các bộ phim tiêu biểu, tổ chức triển lãm ảnh về văn hóa, đất nước con người các nước thành viên.",
+        "Các sự kiện nổi bật:",
+        "Năm 2017 tại Hà Nội: Khai mạc tại Thư viện Quốc gia, với sự tham gia của các Đại sứ quán.",
+        "Năm 2019 tại Đà Nẵng: Lần đầu tiên tổ chức tại Đà Nẵng, với nhiều bộ phim hài được giới thiệu.",
+        "Đơn vị tổ chức: Bộ Văn hóa, Thể thao và Du lịch Việt Nam phối hợp với các Đại sứ quán của Chile, Colombia, Mexico, Peru.",
+        "Tóm lại, đây là chuỗi sự kiện văn hóa ý nghĩa, mang đến cái nhìn đa dạng về điện ảnh và văn hóa khu vực Thái Bình Dương cho công chúng Việt Nam."
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Liên hoan phim Italia 2023",
+      "description": "Liên hoan phim Italia 2023",
+      "thumbnail": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623655/events10_v1xjso.png",
+      "date": "16:29 30/11/2023",
+      "bannerUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973963/events10-pic1_dp5u0k.jpg",
+      "posterUrl": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766973964/events10-pic2_wtu1af.jpg",
+      "venues": [
+        "Liên hoan phim Italia 2023 tại Việt Nam là sự kiện văn hóa do Đại sứ quán Italia tại Hà Nội và Tổng Lãnh sự quán Italia tại TP.HCM phối hợp tổ chức, nhằm kỷ niệm 50 năm thiết lập quan hệ ngoại giao giữa hai nước.",
+        "Thông tin thời gian và địa điểm",
+        "Sự kiện diễn ra tại hai thành phố lớn với lịch trình cụ thể:",
+        "Hà Nội: Từ ngày 27/11 đến ngày 02/12/2023 tại Trung tâm Chiếu phim Quốc gia (87 Láng Hạ, Ba Đình).",
+        "TP. Hồ Chí Minh: Từ ngày 03/12 đến ngày 08/12/2023 tại rạp CGV Lý Chính Thắng (83 Lý Chính Thắng, Quận 3).",
+        "Danh sách 6 bộ phim trình chiếu",
+        "Liên hoan giới thiệu các tác phẩm điện ảnh đương đại đặc sắc của Ý, bao gồm nhiều thể loại từ chính kịch đến hài kịch và hành động:",
+        "Chim nhạn (Il Colibrì / The Hummingbird): Phim chính kịch của đạo diễn Francesca Archibugi.",
+        "Diabolik: Phim hành động tội phạm của anh em nhà Manetti.",
+        "Diabolik: Ginko tấn công (Diabolik Ginko All'Attacco): Phần tiếp theo của loạt phim về siêu trộm Diabolik.",
+        "Tháng Chín (Settembre / September): Phim của đạo diễn Giulia Louise Steigerwalt.",
+        "Leonora Addio: Phim đoạt giải của đạo diễn Paolo Taviani.",
+        "Sự trở lại của Casanova (Il Ritorno Di Casanova): Phim của đạo diễn Gabriele Salvatores.",
+        "Các hoạt động bổ trợ",
+        "Giao lưu và thảo luận: Sau mỗi buổi chiếu, khán giả có cơ hội thảo luận trực tiếp với ông Antonio Termenini, Giám đốc Nghệ thuật của Liên hoan phim châu Á tại Rome.",
+        "Tọa đàm: Một buổi thảo luận chuyên sâu với chủ đề \"Liên hoan phim quốc tế – Quy trình tổ chức và những câu chuyện hậu trường\" đã được tổ chức tại Hà Nội vào ngày 30/11/2023."
+      ]
+    }
+  ],
+  "News": [
+    {
+      "id": "1",
+      "title": "Chương trình phim kỉ niệm nhân dịp 70 năm Giải phòng Thủ đô",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623099/pic1_zphfd7.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623100/pic1Detail_lyyimk.jpg",
+      "date": "03/10/2024",
+      "lead": "Nhân dịp 70 năm ngày Giải phóng Thủ đô (10/10/1954 – 10/10/2024), Trung tâm Chiếu phim Quốc gia tổ chức chương trình phim kỉ niệm tại Trung tâm.",
+      "content": "Bộ phim được chọn để trình chiếu miễn phí trong chương trình lần này là: \"Đào, Phở và Piano\". Tác phẩm tái hiện khung cảnh Hà Nội những ngày cuối cùng trong Trận Hà Nội 1946...",
+      "details": [
+        "Thời gian chiếu phim: từ 04/10/2024",
+        "Địa điểm: Phòng chiếu số 12",
+        "Suất chiếu: 10h00 và 20h15",
+        "Hình thức nhận vé: Khách hàng nhận vé ở đúng trực tiếp tại quầy vé"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "VUI TẾT TRUNG THU - RINH QUÀ VI VU",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623099/pic2_pr8php.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627869/pic2-1_g7228p.jpg",
+      "date": "20/12/2025",
+      "lead": "Chương trình khuyến mãi đặc biệt nhân dịp Tết Trung Thu, mang đến những ưu đãi hấp dẫn cho khách hàng.",
+      "content": "Nhân dịp Tết Trung Thu, NCC Cinema tri ân khách hàng với chương trình khuyến mãi đặc biệt. Đây là cơ hội tuyệt vời để cả gia đình cùng nhau thưởng thức những bộ phim hay và nhận về những phần quà giá trị.",
+      "details": [
+        "Thời gian: Từ 15/09 đến 30/09/2024",
+        "Ưu đãi: Giảm 30% cho vé xem phim",
+        "Quà tặng: Lồng đèn và bánh trung thu cho khách hàng may mắn"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Chương trình 'Suất chiếu đặc biệt' lần đầu tiên diễn ra tại Trung tâm Chiếu phim Quốc gia",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623099/pic3_bh7inw.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627869/pic4-1_ax2j5g.jpg",
+      "date": "19/12/2025",
+      "lead": "Trung tâm Chiếu phim Quốc gia vinh dự giới thiệu chương trình 'Suất chiếu đặc biệt' lần đầu tiên với nhiều hoạt động hấp dẫn.",
+      "content": "Chương trình 'Suất chiếu đặc biệt' là sáng kiến mới nhằm mang đến trải nghiệm điện ảnh độc đáo cho khán giả. Các bộ phim được tuyển chọn kỹ lưỡng, kết hợp với nhiều hoạt động tương tác thú vị.",
+      "details": [
+        "Thời gian: Mỗi tháng 1 suất chiếu",
+        "Phim: Các tác phẩm điện ảnh đặc sắc",
+        "Hoạt động: Giao lưu với đạo diễn, diễn viên"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "SUẤT CHIẾU ĐẶC BIỆT - QUÀ TẶNG TƯNG BỪNG - GIÁ VÉ KHÔNG ĐỔI",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627868/pic4_gughjs.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627869/pic4-1_ax2j5g.jpg",
+      "date": "18/12/2025",
+      "lead": "Chương trình suất chiếu đặc biệt với quà tặng giá trị, giá vé không thay đổi cho tất cả khách hàng.",
+      "content": "NCC Cinema mang đến chương trình suất chiếu đặc biệt với nhiều ưu đãi hấp dẫn. Khách hàng không chỉ được thưởng thức phim hay mà còn nhận về những món quà giá trị, tất cả với mức giá vé không đổi.",
+      "details": [
+        "Thời gian: Cuối tuần hàng tuần",
+        "Quà tặng: Combo bắp nước, poster phim",
+        "Giá vé: Giữ nguyên giá thường"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Đợt phim Kỷ niệm 79 năm Cách mạng tháng 8 (19/8/1945-19/8/2024) và Quốc Khánh nước Cộng hòa xã hội chủ nghĩa Việt Nam (2/9/1945- 2/9/2024) tại Trung tâm Chiếu phim Quốc gia",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623100/pic5_mintny.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627878/pic5-1_ngmqhk.jpg",
+      "date": "03/10/2024",
+      "lead": "Đợt phim Kỷ niệm 79 năm Cách mạng tháng 8 (19/8/1945-19/8/2024) và Quốc Khánh nước Cộng hòa xã hội chủ nghĩa Việt Nam (2/9/1945- 2/9/2024) tại Trung tâm Chiếu phim Quốc gia",
+      "content": "Nhân dịp kỷ niệm 79 năm Cách mạng tháng 8 và Quốc Khánh, Trung tâm Chiếu phim Quốc gia tổ chức đợt chiếu phim với các tác phẩm về lịch sử dân tộc, góp phần giáo dục truyền thống yêu nước cho thế hệ trẻ.",
+      "details": [
+        "Thời gian: Từ 19/8 đến 2/9/2024",
+        "Nội dung: Các phim tài liệu và điện ảnh về lịch sử",
+        "Đối tượng: Miễn phí cho học sinh, sinh viên"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Tuyển dụng cộng tác viên soát vé dẫn chỗ, bán vé tại Trung tâm Chiếu phim Quốc gia",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623100/pic6_ccd7pt.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627868/pic6-1_kmpigf.jpg",
+      "date": "03/10/2024",
+      "lead": "Chương trình khuyến mãi khủng cuối năm với mức giảm giá lên đến 50% cho tất cả các suất chiếu.",
+      "content": "Kết thúc một năm thành công, NCC Cinema tri ân khách hàng với chương trình khuyến mãi lớn nhất trong năm. Giảm giá 50% cho tất cả các loại vé, áp dụng cho mọi suất chiếu trong thời gian diễn ra chương trình.",
+      "details": [
+        "Thời gian: Từ 15/12 đến 31/12/2024",
+        "Giảm giá: 50% tất cả loại vé",
+        "Áp dụng: Tất cả suất chiếu, không giới hạn"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "THÔNG BÁO HOÀN THÀNH KHẢO SÁT CƠ SỞ VẬT CHẤT NĂM 2024",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623100/pic7_jnvey8.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627868/pic7-1_lo1rc7.jpg",
+      "date": "03/10/2024",
+      "lead": "NCC Cinema công bố kế hoạch mở rộng mạng lưới rạp chiếu phim tại khu vực miền Nam.",
+      "content": "Trong năm 2025, NCC Cinema sẽ triển khai mở thêm 5 cụm rạp mới tại các tỉnh thành miền Nam. Đây là bước đi chiến lược nhằm phục vụ nhu cầu giải trí ngày càng tăng của người dân và khẳng định vị thế của NCC Cinema trên thị trường.",
+      "details": [
+        "Thời gian: Quý 1-2/2025",
+        "Địa điểm: TP.HCM, Cần Thơ, Vũng Tàu",
+        "Quy mô: Mỗi cụm rạp 6-8 phòng chiếu"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "REVIEW PHIM HOẠT HÌNH HOT NHẤT HÈ NÀY - KẺ TRỘM MẶT TRĂNG 4",
+      "image": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766623100/pic8_q9kkxn.png",
+      "detailImage": "https://res.cloudinary.com/dyj2auia8/image/upload/v1766627868/pic8-1_uwtnd9.jpg",
+      "date": "14/12/2025",
+      "lead": "Chương trình suất chiếu sớm với mức giá ưu đãi chỉ 69K/vé.",
+      "content": "Đặc biệt dành cho những người thích không gian rạp yên tĩnh vào buổi sáng...",
+      "details": [
+        "Thời gian: Các ngày trong tuần (Thứ 2 - Thứ 6)",
+        "Khung giờ: Trước 12h trưa",
+        "Giá vé: 69,000 VNĐ/vé"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "REVIEW PHIM HOẠT HÌNH HOT NHẤT HÈ NÀY - KẺ TRỘM MẶT TRĂNG 4",
+      "image": "https://res.cloudinary.com/your-cloud-name/image/upload/v1/ncc-cinema/news-despicable4.png",
+      "date": "14/12/2025",
+      "lead": "Chương trình suất chiếu sớm với mức giá ưu đãi chỉ 69K/vé.",
+      "content": "Đặc biệt dành cho những người thích không gian rạp yên tĩnh vào buổi sáng...",
+      "details": [
+        "Thời gian: Các ngày trong tuần (Thứ 2 - Thứ 6)",
+        "Khung giờ: Trước 12h trưa",
+        "Giá vé: 69,000 VNĐ/vé"
+      ]
+    }
+  ]
+}

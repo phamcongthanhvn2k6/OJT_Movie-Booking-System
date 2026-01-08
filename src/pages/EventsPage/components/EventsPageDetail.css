@@ -1,0 +1,486 @@
+.container {
+  min-height: 100vh;
+  max-width: 200vh;
+  background-color: #1a1d2e;
+  color: #ffffff;
+}
+
+/* Back button */
+.backButtonContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px 0;
+}
+
+.backButtonTop {
+  background: rgba(26, 35, 50, 0.8);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Not found */
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 40px 20px;
+}
+
+.notFoundTitle {
+  color: #b0b7c3;
+  margin-bottom: 20px;
+}
+
+.backButton {
+  background: #2a3142;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Header */
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.description {
+  margin-bottom: 24px;
+}
+
+.paragraph {
+  color: #d1d5db;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.venueSection {
+  margin-bottom: 20px;
+}
+
+.venueItem,
+.additionalInfo,
+.websiteLink,
+.note {
+  color: #d1d5db;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.link {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+/* Banner */
+.bannerSection {
+  padding: 0 0 40px;
+}
+
+.bannerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.bannerImg {
+  width: 100%;
+  display: block;
+}
+
+.bannerContainer2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 32px;
+  padding: 0 24px;
+}
+
+
+
+.posterImg {
+  width: 100%;
+  display: block;
+}
+
+.posterTextOverlay {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.posterTitle {
+  font-size: 48px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+
+
+
+
+
+.flagIcon {
+  font-size: 24px;
+}
+
+
+
+.movieTitle {
+  font-weight: 600;
+}
+
+.movieTitleVn {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.event-detail-container {
+  min-height: 100vh;
+  background-color: #0B1220;
+  color: #ffffff;
+}
+
+.back-button-top {
+  position: sticky;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(26, 35, 50, 0.95);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  margin: 20px 0 0 20px;
+}
+
+.back-button-top:hover {
+  background: rgba(36, 52, 71, 0.95);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(-4px);
+}
+
+.event-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: 40px 20px;
+}
+
+.event-not-found h2 {
+  color: #B0B7C3;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background: #1a2332;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ===================================
+   EVENT HEADER SECTION
+   =================================== */
+
+.event-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.event-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 32px;
+  color: #ffffff;
+}
+
+.event-description {
+  margin-bottom: 32px;
+}
+
+.event-description p {
+  color: #B0B7C3;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.event-description p:last-child {
+  margin-bottom: 0;
+}
+
+.event-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-meta li {
+  color: #8A93A3;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* ===================================
+   EVENT BANNER SECTION
+   =================================== */
+
+.event-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.event-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ===================================
+   EVENT SCHEDULE SECTION
+   =================================== */
+
+
+.poster-card {
+  position: sticky;
+  top: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.poster-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.poster-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(11, 18, 32, 0.95) 0%, transparent 100%);
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.poster-duration {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.poster-location {
+  font-size: 18px;
+  font-weight: 500;
+  color: #B0B7C3;
+}
+
+
+
+.title-vn {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0B1220;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.title-en {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.schedule-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 0;
+}
+
+
+@media (max-width: 1024px) {
+  .event-title {
+    font-size: 28px;
+  }
+
+ 
+
+  .poster-duration {
+    font-size: 20px;
+  }
+
+  .poster-location {
+    font-size: 16px;
+  }
+
+
+  .title-vn {
+    font-size: 16px;
+  }
+}
+
+/* ===================================
+   MOBILE STYLES (< 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+  .back-button-top {
+    margin: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .event-header {
+    padding: 30px 20px;
+  }
+
+  .event-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .event-description {
+    margin-bottom: 24px;
+  }
+
+  .event-description p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .event-meta li {
+    font-size: 14px;
+  }
+
+  .event-banner {
+    padding: 30px 20px;
+  }
+
+ 
+
+  /* Mobile: Stack to Single Column */
+  .schedule-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Poster moves to top */
+  .schedule-left {
+    order: 1;
+  }
+
+  .poster-card {
+    position: relative;
+    top: 0;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .poster-overlay {
+    padding: 20px 15px;
+  }
+
+  .poster-duration {
+    font-size: 18px;
+  }
+
+  .poster-location {
+    font-size: 14px;
+  }
+
+  
+
+  /* Simplify schedule item grid for mobile */
+  
+
+  .title-vn {
+    font-size: 16px;
+  }
+
+  .title-en {
+    font-size: 13px;
+  }
+}
+
+/* ===================================
+   SMALL MOBILE STYLES (< 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+  .event-header {
+    padding: 20px 16px;
+  }
+
+  .event-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .event-description p {
+    font-size: 14px;
+  }
+
+  .event-banner {
+    padding: 20px 16px;
+  }
+
+  
+  .poster-card {
+    max-width: 250px;
+  }
+
+  
+
+  .title-vn {
+    font-size: 15px;
+  }
+
+  .title-en {
+    font-size: 12px;
+  }
+}
