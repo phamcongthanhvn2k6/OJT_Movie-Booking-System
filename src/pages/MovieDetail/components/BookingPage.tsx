@@ -253,12 +253,12 @@ const BookingPage = ({ showtime }: BookingProps) => {
         <p className="font-bold text-[14px] leading-5">
           Giờ chiếu: {getTimeKey(toDate(showtime.start_time))}
         </p>
-        <p className="border border-[#EF4444] text-white py-[8px] px-[16px] rounded-[12px]">
+        <p className="border border-[#EF4444] text-white py-2 px-4 rounded-xl">
           Thời gian chọn ghế: {getTimeKey(selectSeatTime)}
         </p>
       </div>
 
-      <img src="/screen.png" alt="" className="w-full mt-[16px]" />
+      <img src="/screen.png" alt="" className="w-full mt-4" />
 
       <p className="text-center font-bold leading-5 text-[20px] mb-6">
         Phòng chiếu số {showtime.screen_id}
@@ -280,7 +280,7 @@ const BookingPage = ({ showtime }: BookingProps) => {
             return (
               <div
                 key={rowKey}
-                className="w-full max-w-[712px] grid lg:gap-4 gap-1 grid-cols-[32px_repeat(15,minmax(0,1fr))_32px] lg:grid-cols-[repeat(15,minmax(0,1fr))]"
+                className="w-full max-w-178 grid lg:gap-4 gap-1 grid-cols-[32px_repeat(15,minmax(0,1fr))_32px] lg:grid-cols-15"
               >
                 {/* Tên hàng – trái */}
                 <div className="flex lg:hidden items-center justify-center text-white font-semibold">
@@ -322,9 +322,9 @@ const BookingPage = ({ showtime }: BookingProps) => {
         {/* Ghế đã đặt */}
         <div className="flex items-center gap-2">
           <div
-            className="lg:w-[40px] lg:h-[40px]
-        md:w-[25px] md:h-[25px]
-        w-[16px] h-[16px] bg-[#252A31] flex items-center justify-center text-white rounded-[4px]"
+            className="lg:w-10 lg:h-10
+        md:w-6.25 md:h-6.25
+        w-4 h-4 bg-[#252A31] flex items-center justify-center text-white rounded-sm"
           >
             X
           </div>
@@ -334,7 +334,7 @@ const BookingPage = ({ showtime }: BookingProps) => {
         {/* Ghế bạn chọn */}
         <div className="flex items-center gap-2">
           <div
-            className="lg:w-[40px] lg:h-[40px]
+            className="lg:w-10 lg:h-10
         md:w-[25px] md:h-[25px]
         w-[16px] h-[16px] bg-blue-500 rounded-[4px]"
           ></div>
