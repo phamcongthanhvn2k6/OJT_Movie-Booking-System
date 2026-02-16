@@ -1,18 +1,23 @@
 // src/types/news.types.ts
 
-export interface NewsPost {
+// 1. Đổi tên NewsPost -> News và export ra
+export interface News {
   id: string;
   title: string;
-  date: string;
+  date?: string;       // Cho phép null/undefined nếu API trả về created_at thay vì date
   image: string;
   detailImage?: string;
   lead: string;
   content: string;
-  details: string[];
+  details?: string[]; // Đánh dấu optional phòng khi API không trả về mảng này
+  
+  // Thêm 2 trường này để tương thích với logic bên news.api.ts
+  created_at?: string; 
+  updated_at?: string;
 }
 
-// Dữ liệu mẫu: Tổng hợp từ cả danh sách và chi tiết
-const newsData: NewsPost[] = [
+// Dữ liệu mẫu: Cập nhật lại type thành News
+const newsData: News[] = [
   {
     id: '1',
     title: 'Chương trình phim kỉ niệm nhân dịp 70 năm Giải phòng Thủ đô',
@@ -119,7 +124,7 @@ const newsData: NewsPost[] = [
       'Giá vé: 69,000 VNĐ/vé (tất cả loại ghế)'
     ]
   },
-  // Các bài viết từ 9-24 (Giữ lại để phân trang hoạt động, thêm nội dung mặc định)
+  // Các bài viết từ 9-24
   ...Array.from({ length: 16 }, (_, i) => ({
     id: (i + 9).toString(),
     title: `Tin tức mẫu số ${i + 9}: Sự kiện điện ảnh hấp dẫn`,
@@ -133,5 +138,5 @@ const newsData: NewsPost[] = [
   }))
 ];
 
-export const getNewsList = (): NewsPost[] => newsData;
-export const getNewsById = (id: string): NewsPost | undefined => newsData.find((p) => p.id === id);
+export const getNewsList = (): News[] => newsData;
+export const getNewsById = (id: string): News | undefined => newsData.find((p) => p.id === id);
