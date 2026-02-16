@@ -72,7 +72,8 @@ const FavoritesPage = () => {
           {/* Render List */}
           {!isLoading && favorites.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {favorites.map((movie, index) => {
+              {/* SỬA Ở ĐÂY: Thêm dấu gạch dưới vào trước index thành _index */}
+              {favorites.map((movie, _index) => {
                  // --- FIX: Kiểm tra dữ liệu an toàn ---
                  // Nếu dữ liệu bị lỗi (null, không có id, hoặc là số 1 như trong db.json cũ), ta bỏ qua không render
                  if (!movie || typeof movie !== 'object' || !movie.id) return null;
