@@ -51,7 +51,7 @@ const NewsDetail: React.FC = () => {
 
     const fetchNews = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/News/${id}`);
+        const res = await fetch(`${import.meta.env.VITE_LOCAL}/News/${id}`);
         if (!res.ok) throw new Error('Not found');
         
         const data = await res.json();

@@ -6,14 +6,13 @@ import movieAPI from "../../../api/movie.api";
 import type { Movie } from "../../../types/movie.type";
 import type { Showtime } from "../../../types/showtime.type";
 import showtimeAPI from "../../../api/showtime.api";
-import seatAPI from "../../../api/seat.api";
 import type { Seat } from "../../../types/seat.type";
 import axios from "axios";
 import type { Payment } from "../../../types/payments.type";
 
 const PaymentMain = () => {
   const location = useLocation();
-  const { selectedSeats = [], seatList = [] } = location.state || {};
+  const { selectedSeats = [] } = location.state || {};
 
   const { movieId, bookingId } = useParams();
   const navigate = useNavigate();
@@ -24,7 +23,8 @@ const PaymentMain = () => {
   const [showtime, setShowtime] = useState<Showtime | null>(null);
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [payment, setPayment] = useState<Payment | null>(null);
-
+  const [qrCode, setQrCode] = useState<string | null>(null);
+  
   // fetch Booking
   useEffect(() => {
     if (!bookingId) return;
@@ -128,7 +128,7 @@ const PaymentMain = () => {
     };
 
     initPayment();
-  }, [booking?.id]);
+  }, [booking?.id, booking?.total_price_movie]);
 
   console.log("payment", payment);
 
@@ -156,6 +156,22 @@ const PaymentMain = () => {
     }
 
     try {
+      if (selectedMethod === "VietQR") {
+        const res = await axios.post(`${import.meta.env.VITE_LOCAL}/api/payment/create`, {
+          orderId: booking.id,
+          amount: booking.total_price_movie,
+          description: `Thanh toan ve ${booking.id}`
+        });
+
+        if (res.data.success) {
+          setQrCode(res.data.qrCode);
+          startPolling(payment.id);
+        } else {
+          alert("Lỗi tạo mã QR: " + res.data.message);
+        }
+        return;
+      }
+
       //Update payment → COMPLETED
       await axios.patch(
         `${import.meta.env.VITE_LOCAL}/payments/${payment?.id}`,
@@ -168,23 +184,45 @@ const PaymentMain = () => {
       );
 
       //Tạo booking_seats
-      await Promise.all(
-        selectedSeats.map((seat: Seat) =>
-          axios.post(`${import.meta.env.VITE_LOCAL}/booking_seats`, {
-            booking_id: booking.id,
-            seat_id: seat.id,
-            quantity: 1,
-            created_at: new Date(),
-            updated_at: new Date(),
-          })
-        )
-      );
+      await createBookingSeats();
       alert("Thanh toán thành công");
       navigate("/payment-success");
     } catch (error) {
       console.error("Lỗi thanh toán:", error);
       alert("Thanh toán thất bại");
     }
+  };
+
+  const startPolling = (paymentId: number | string) => {
+    const interval = setInterval(async () => {
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_LOCAL}/payments/${paymentId}`);
+        if (res.data.payment_status === "COMPLETED") {
+          clearInterval(interval);
+          // Tạo booking_seats khi thanh toán thành công
+          await createBookingSeats();
+          alert("Thanh toán thành công");
+          navigate("/payment-success");
+        }
+      } catch (err) {
+        console.error("Polling error", err);
+      }
+    }, 3000); // Poll mỗi 3s
+  };
+
+  const createBookingSeats = async () => {
+    if (!booking) return;
+    await Promise.all(
+      selectedSeats.map((seat: Seat) =>
+        axios.post(`${import.meta.env.VITE_LOCAL}/booking_seats`, {
+          booking_id: booking.id,
+          seat_id: seat.id,
+          quantity: 1,
+          created_at: new Date(),
+          updated_at: new Date(),
+        })
+      )
+    );
   };
 
   return (
@@ -350,12 +388,26 @@ const PaymentMain = () => {
           </div>
 
           {/* Button */}
-          <button
-            className="w-full py-[12px] rounded-[9999px] bg-gradient-to-r from-[#E30713] to-[#FE6969] font-semibold mb-3 hover:cursor-pointer"
-            onClick={handlePayment}
-          >
-            Thanh toán
-          </button>
+          {qrCode ? (
+            <div className="flex flex-col items-center mb-6">
+              <p className="font-semibold mb-2 text-green-400">Quét mã QR để thanh toán</p>
+              <img src={qrCode} alt="VietQR" className="w-[200px] h-[200px] bg-white p-2 rounded-lg" />
+              <p className="text-sm mt-3 text-gray-400">Đang chờ thanh toán...</p>
+              <button 
+                onClick={() => { setQrCode(null); }} 
+                className="mt-4 text-sm text-red-500 underline hover:cursor-pointer"
+              >
+                Hủy chờ thanh toán QR
+              </button>
+            </div>
+          ) : (
+            <button
+              className="w-full py-[12px] rounded-[9999px] bg-gradient-to-r from-[#E30713] to-[#FE6969] font-semibold mb-3 hover:cursor-pointer"
+              onClick={handlePayment}
+            >
+              Thanh toán
+            </button>
+          )}
 
           <button className="w-full py-[10px] rounded-[9999px] border border-white text-white mb-4 hover:cursor-pointer">
             Quay lại

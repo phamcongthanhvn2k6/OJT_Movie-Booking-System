@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import db from '../../../db.json';
+import axios from 'axios';
 
 export interface NewsItem {
   id: string;
@@ -23,14 +23,8 @@ const initialState: NewsState = {
 };
 
 export const fetchNews = createAsyncThunk<NewsItem[]>('news/fetchNews', async () => {
-  return new Promise<NewsItem[]>((resolve) => {
-    
-    const database = db as unknown as { News: NewsItem[] };
-    
-    const data = database.News || []; 
-    
-    setTimeout(() => resolve(data), 300);
-  });
+    const response = await axios.get(`${import.meta.env.VITE_LOCAL}/News`);
+    return response.data;
 });
 
 const newsSlice = createSlice({
