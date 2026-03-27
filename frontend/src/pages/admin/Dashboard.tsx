@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -310,7 +310,7 @@ const Dashboard: React.FC = () => {
                     tickFormatter={(value) => `${value / 1000}k`}
                 />
                 <Tooltip 
-                    formatter={(value: number | undefined) => value !== undefined ? formatCurrency(value) : ''}
+                    formatter={(value: any) => value !== undefined ? formatCurrency(value as number) : ''}
                     contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
                 />
                 <Area 
@@ -340,7 +340,7 @@ const Dashboard: React.FC = () => {
                         width={100} 
                         tick={{fontSize: 11}}
                     />
-                    <Tooltip formatter={(value: number | undefined) => value !== undefined ? formatCurrency(value) : ''} />
+                    <Tooltip formatter={(value: any) => value !== undefined ? formatCurrency(value as number) : ''} />
                     <Bar dataKey="value" fill="#10b981" radius={[0, 4, 4, 0]} />
                 </BarChart>
             </ResponsiveContainer>
