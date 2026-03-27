@@ -124,7 +124,7 @@ const NewsManagement: React.FC = () => {
 
     // 2. Nếu không có trong local, gọi API xóa
     try {
-      const response = await fetch(`http://localhost:5000/News/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_LOCAL}/News/${id}`, {
         method: 'DELETE'
       });
 

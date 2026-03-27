@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
+ 
 import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify } from "jose"; // [Cite: Document thư viện jose]
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = import.meta.env.VITE_LOCAL;
 const USER_TOKEN_KEY = import.meta.env.VITE_USER_TOKEN_KEY
 const USER_DATA_KEY = import.meta.env.VITE_USER_DATA_KEY
 // jose yêu cầu key dưới dạng Uint8Array

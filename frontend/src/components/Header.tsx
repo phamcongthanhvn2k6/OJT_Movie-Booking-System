@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { User, LogOut, ChevronDown, AlertCircle, Menu, X ,Heart} from 'lucide-react';
+import { User, LogOut, ChevronDown, AlertCircle, Menu, X, Heart, Ticket } from 'lucide-react';
 import type { RootState } from '../store';
 import { logout } from '../store/slices/authSlice';
 
@@ -133,6 +133,14 @@ const NCCHeader = () => {
                       <span>Thông tin cá nhân</span>
                     </Link>
                     <Link 
+                      to="/my-tickets" 
+                      className="flex items-center space-x-2 px-4 py-2 text-sm hover:bg-gray-700 transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      <Ticket className="h-4 w-4 text-red-500" />
+                      <span>Vé của tôi</span>
+                    </Link>
+                    <Link 
                       to="/favorites" 
                       className="flex items-center space-x-2 px-4 py-2 text-sm hover:bg-gray-700 transition-colors"
                       onClick={() => setIsDropdownOpen(false)}
@@ -247,6 +255,16 @@ const NCCHeader = () => {
         >
           <User className="inline h-4 w-4 mr-2" />
           Thông tin cá nhân
+        </Link>
+
+        {/* --- Nút: Vé của tôi --- */}
+        <Link
+          to="/my-tickets" 
+          className="flex items-center justify-center px-4 xs:px-5 md:px-6 py-2.5 xs:py-3 md:py-[14px] text-[13px] xs:text-sm md:text-[15px] font-medium text-gray-300 bg-transparent border border-gray-700 rounded-lg hover:bg-gray-800 hover:text-red-500 transition-all"
+          onClick={closeMobileMenu}
+        >
+          <Ticket className="inline h-4 w-4 mr-2" /> 
+          Vé của tôi
         </Link>
 
         {/* --- [MỚI] Nút: Phim yêu thích --- */}

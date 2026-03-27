@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import db from '../../../db.json'; 
+import axios from 'axios';
 
 export interface Event {
   id: string;
@@ -26,9 +26,8 @@ const initialState: EventState = {
 };
 
 export const fetchEvents = createAsyncThunk<Event[]>('events/fetchEvents', async () => {
-  return new Promise<Event[]>((resolve) => {
-    setTimeout(() => resolve(db.events as unknown as Event[]), 300); 
-  });
+    const response = await axios.get(`${import.meta.env.VITE_LOCAL}/events`);
+    return response.data;
 });
 
 const eventSlice = createSlice({
@@ -51,7 +50,7 @@ const eventSlice = createSlice({
 });
 
 const addEventAPI = async (eventData: Event) => {
-  const response = await fetch('http://localhost:5000/events', { // URL JSON Server của bạn
+  const response = await fetch(`${import.meta.env.VITE_LOCAL}/events`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(eventData),

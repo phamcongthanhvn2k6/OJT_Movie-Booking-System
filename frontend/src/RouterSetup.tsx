@@ -25,6 +25,7 @@ import ShowtimePage from "./pages/ShowtimePage/ShowtimePage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import { PaymentPage } from "./pages/PaymentPage/PaymentPage";
 import UserProfile from "./pages/UserProfile/UserProfile";
+import MyTicketsPage from "./pages/MyTickets/MyTicketsPage";
 import TheaterManagement from "./pages/admin/TheaterManagerment";
 import BookingManagement from "./pages/admin/BookingManagement";
 import ShowtimeManagement from "./pages/admin/ShowitimeManagement";
@@ -51,6 +52,7 @@ const RouterSetup = () => {
       <Route path="/payment/:movieId/:bookingId" element={<PaymentPage />} />
       <Route path="/payment-success" element={<PaymentSuccessPage />} />
       <Route path="/profile" element={<UserProfile />} />
+      <Route path="/my-tickets" element={<MyTicketsPage />} />
 
       {/* --- CÁC ROUTE ADMIN (PROTECTED) --- */}
       <Route

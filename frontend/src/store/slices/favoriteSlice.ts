@@ -26,7 +26,7 @@ const initialState: FavoriteState = {
   error: null,
 };
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = import.meta.env.VITE_LOCAL;
 
 // --- 1. FETCH FAVORITES ---
 export const fetchFavorites = createAsyncThunk(

@@ -6,14 +6,13 @@ import movieAPI from "../../../api/movie.api";
 import type { Movie } from "../../../types/movie.type";
 import type { Showtime } from "../../../types/showtime.type";
 import showtimeAPI from "../../../api/showtime.api";
-import seatAPI from "../../../api/seat.api";
 import type { Seat } from "../../../types/seat.type";
 import axios from "axios";
 import type { Payment } from "../../../types/payments.type";
 
 const PaymentMain = () => {
   const location = useLocation();
-  const { selectedSeats = [], seatList = [] } = location.state || {};
+  const { selectedSeats = [] } = location.state || {};
 
   const { movieId, bookingId } = useParams();
   const navigate = useNavigate();
@@ -24,14 +23,13 @@ const PaymentMain = () => {
   const [showtime, setShowtime] = useState<Showtime | null>(null);
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [payment, setPayment] = useState<Payment | null>(null);
-
+  
   // fetch Booking
   useEffect(() => {
     if (!bookingId) return;
 
     const fetchBooking = async () => {
       try {
-        // bookingId là string → truyền thẳng
         const res = await bookingAPI.getById(bookingId);
 
         if (!res || !res.data) {
@@ -54,7 +52,6 @@ const PaymentMain = () => {
 
     const fetchMovie = async () => {
       try {
-        // movieId là string → truyền thẳng
         const res = await movieAPI.getById({ id: movieId });
 
         if (!res || !res.data) {
@@ -128,7 +125,7 @@ const PaymentMain = () => {
     };
 
     initPayment();
-  }, [booking?.id]);
+  }, [booking?.id, booking?.total_price_movie, setPayment]);
 
   console.log("payment", payment);
 
@@ -156,6 +153,21 @@ const PaymentMain = () => {
     }
 
     try {
+      if (selectedMethod === "PayOS") {
+        const res = await axios.post(`${import.meta.env.VITE_LOCAL}/api/payment/create`, {
+          orderId: booking.id,
+          amount: booking.total_price_movie,
+          description: `Thanh toan ve ${booking.id.substring(0,8)}`
+        });
+
+        if (res.data.success) {
+          window.location.assign(res.data.checkoutUrl);
+        } else {
+          alert("Lỗi tạo mã PayOS: " + res.data.message);
+        }
+        return;
+      }
+
       //Update payment → COMPLETED
       await axios.patch(
         `${import.meta.env.VITE_LOCAL}/payments/${payment?.id}`,
@@ -168,23 +180,29 @@ const PaymentMain = () => {
       );
 
       //Tạo booking_seats
-      await Promise.all(
-        selectedSeats.map((seat: Seat) =>
-          axios.post(`${import.meta.env.VITE_LOCAL}/booking_seats`, {
-            booking_id: booking.id,
-            seat_id: seat.id,
-            quantity: 1,
-            created_at: new Date(),
-            updated_at: new Date(),
-          })
-        )
-      );
+      await createBookingSeats();
       alert("Thanh toán thành công");
       navigate("/payment-success");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Lỗi thanh toán:", error);
-      alert("Thanh toán thất bại");
+      alert("Thanh toán thất bại: " + (error.response?.data?.message || error.message));
     }
+  };
+
+
+  const createBookingSeats = async () => {
+    if (!booking) return;
+    await Promise.all(
+      selectedSeats.map((seat: Seat) =>
+        axios.post(`${import.meta.env.VITE_LOCAL}/booking_seats`, {
+          booking_id: booking.id,
+          seat_id: seat.id,
+          quantity: 1,
+          created_at: new Date(),
+          updated_at: new Date(),
+        })
+      )
+    );
   };
 
   return (
@@ -192,7 +210,6 @@ const PaymentMain = () => {
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 px-4">
         {/* LEFT */}
         <div className="flex flex-col gap-6">
-          {/* Thông tin phim */}
           <div className="bg-[#151A21] rounded-[16px] p-6 text-white">
             <p className="font-semibold mb-4">Thông tin phim</p>
 
@@ -212,7 +229,6 @@ const PaymentMain = () => {
               <div>
                 <p className="text-gray-400 mb-1">Ngày giờ chiếu</p>
                 <p className="font-medium text-[#F97316]">
-                  {/*giờ chiếu */}
                   {showtime?.start_time
                     ? new Date(showtime.start_time).toLocaleTimeString(
                         "vi-VN",
@@ -225,7 +241,6 @@ const PaymentMain = () => {
                       )
                     : ""}
                   <span> - </span>
-                  {/*ngày chiếu */}
                   <span className="text-white">
                     {showtime?.start_time
                       ? `${new Date(showtime.start_time).getDate()}/${
@@ -248,7 +263,6 @@ const PaymentMain = () => {
             </div>
           </div>
 
-          {/* Thông tin thanh toán */}
           <div className="bg-[#151A21] rounded-[16px] p-6 text-white">
             <p className="font-semibold mb-4">Thông tin thanh toán</p>
 
@@ -280,7 +294,7 @@ const PaymentMain = () => {
           <div className="flex flex-col gap-3 mb-6">
             {[
               {
-                name: "VietQR",
+                name: "PayOS",
                 icon: "/public/vietqr.png",
                 color: "border-[#2A2F3A]",
               },
@@ -310,13 +324,10 @@ const PaymentMain = () => {
                     : ""
                 }`}
               >
-                {/* radio */}
                 <div
                   className={`w-4 h-4 rounded-full border border-current 
           ${selectedMethod === item.name ? "bg-red-500" : ""}`}
                 />
-
-                {/* icon + text */}
                 <p className="font-medium flex items-center gap-2">
                   <img
                     src={item.icon}
@@ -329,7 +340,6 @@ const PaymentMain = () => {
             ))}
           </div>
 
-          {/* Chi phí */}
           <div className="text-sm mb-6">
             <p className="font-semibold mb-3">Chi phí</p>
 
@@ -349,7 +359,6 @@ const PaymentMain = () => {
             </div>
           </div>
 
-          {/* Button */}
           <button
             className="w-full py-[12px] rounded-[9999px] bg-gradient-to-r from-[#E30713] to-[#FE6969] font-semibold mb-3 hover:cursor-pointer"
             onClick={handlePayment}
