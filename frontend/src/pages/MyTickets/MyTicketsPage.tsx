@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../store';
 import { Ticket, MapPin, Clock, Calendar, CheckCircle, XCircle, CreditCard } from 'lucide-react';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 interface TicketDetails {
   booking_id: string;
@@ -34,7 +36,37 @@ const MyTicketsPage = () => {
       try {
         setLoading(true);
         const res = await axios.get(`${import.meta.env.VITE_LOCAL}/api/user-bookings/${user.id}`);
-        setTickets(res.data);
+        
+        const now = new Date().getTime();
+        const TEN_MINUTES = 10 * 60 * 1000; // 10 minutes
+
+        const processedTickets = res.data.map((ticket: TicketDetails) => {
+          let statusStr = ticket.payment_status;
+
+          // Xử lý các vé bị null/trống payment_status (Không rõ) -> Thành Thất bại
+          if (!statusStr) {
+            statusStr = 'FAILED';
+          }
+
+          // Xử lý vé PENDING quá 10 phút -> Thành Thất bại
+          if (statusStr === 'PENDING' && ticket.booking_time) {
+            const bookingTime = new Date(ticket.booking_time).getTime();
+            if (now - bookingTime > TEN_MINUTES) {
+              statusStr = 'FAILED';
+            }
+          }
+
+          return { ...ticket, payment_status: statusStr };
+        });
+
+        // Sắp xếp vé mới nhất lên đầu
+        processedTickets.sort((a: TicketDetails, b: TicketDetails) => {
+          const timeA = new Date(a.booking_time).getTime();
+          const timeB = new Date(b.booking_time).getTime();
+          return (isNaN(timeB) ? 0 : timeB) - (isNaN(timeA) ? 0 : timeA);
+        });
+
+        setTickets(processedTickets);
       } catch (err: any) {
         console.error("Lỗi lấy dữ liệu vé:", err);
         setError("Không thể tải danh sách vé. Vui lòng thử lại sau.");
@@ -79,8 +111,9 @@ const MyTicketsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0F14] text-white py-10 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[#0B0F14] text-white w-full">
+      <Header />
+      <div className="max-w-4xl mx-auto py-10 px-4">
         <h1 className="text-2xl md:text-3xl font-bold mb-8 flex items-center border-b border-gray-800 pb-4">
           <Ticket className="mr-3 text-red-500 h-8 w-8" />
           Vé của tôi
@@ -256,6 +289,7 @@ const MyTicketsPage = () => {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 };

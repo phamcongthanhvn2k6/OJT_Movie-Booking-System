@@ -4,13 +4,19 @@ import type { Showtime } from "../types/showtime.type";
 // Lấy danh sách suất chiếu
 export async function getAllShowtimes(params?: {
   movieId?: string;
+  movie_id?: string;
   date?: string;
 }) {
   try {
+    const apiParams = { ...params };
+    if (apiParams.movieId) {
+      apiParams.movie_id = apiParams.movieId;
+      delete apiParams.movieId;
+    }
     const response = await axios.get(
       `${import.meta.env.VITE_LOCAL}/showtimes`,
       {
-        params,
+        params: apiParams,
       }
     );
     return response;
