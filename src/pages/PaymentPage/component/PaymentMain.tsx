@@ -23,8 +23,6 @@ const PaymentMain = () => {
   const [showtime, setShowtime] = useState<Showtime | null>(null);
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [payment, setPayment] = useState<Payment | null>(null);
-  const [qrCode, setQrCode] = useState<string | null>(null);
-  
   // fetch Booking
   useEffect(() => {
     if (!bookingId) return;
@@ -128,7 +126,7 @@ const PaymentMain = () => {
     };
 
     initPayment();
-  }, [booking?.id, booking?.total_price_movie]);
+  }, [booking?.id, booking?.total_price_movie, setPayment]);
 
   console.log("payment", payment);
 
@@ -156,7 +154,7 @@ const PaymentMain = () => {
     }
 
     try {
-      if (selectedMethod === "VietQR") {
+      if (selectedMethod === "PayOS") {
         const res = await axios.post(`${import.meta.env.VITE_LOCAL}/api/payment/create`, {
           orderId: booking.id,
           amount: booking.total_price_movie,
@@ -164,10 +162,9 @@ const PaymentMain = () => {
         });
 
         if (res.data.success) {
-          setQrCode(res.data.qrCode);
-          startPolling(payment.id);
+          window.location.assign(res.data.checkoutUrl);
         } else {
-          alert("Lỗi tạo mã QR: " + res.data.message);
+          alert("Lỗi tạo mã PayOS: " + res.data.message);
         }
         return;
       }
@@ -187,28 +184,12 @@ const PaymentMain = () => {
       await createBookingSeats();
       alert("Thanh toán thành công");
       navigate("/payment-success");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Lỗi thanh toán:", error);
-      alert("Thanh toán thất bại");
+      alert("Thanh toán thất bại: " + (error.response?.data?.message || error.message));
     }
   };
 
-  const startPolling = (paymentId: number | string) => {
-    const interval = setInterval(async () => {
-      try {
-        const res = await axios.get(`${import.meta.env.VITE_LOCAL}/payments/${paymentId}`);
-        if (res.data.payment_status === "COMPLETED") {
-          clearInterval(interval);
-          // Tạo booking_seats khi thanh toán thành công
-          await createBookingSeats();
-          alert("Thanh toán thành công");
-          navigate("/payment-success");
-        }
-      } catch (err) {
-        console.error("Polling error", err);
-      }
-    }, 3000); // Poll mỗi 3s
-  };
 
   const createBookingSeats = async () => {
     if (!booking) return;
@@ -318,7 +299,7 @@ const PaymentMain = () => {
           <div className="flex flex-col gap-3 mb-6">
             {[
               {
-                name: "VietQR",
+                name: "PayOS",
                 icon: "/public/vietqr.png",
                 color: "border-[#2A2F3A]",
               },
@@ -388,26 +369,12 @@ const PaymentMain = () => {
           </div>
 
           {/* Button */}
-          {qrCode ? (
-            <div className="flex flex-col items-center mb-6">
-              <p className="font-semibold mb-2 text-green-400">Quét mã QR để thanh toán</p>
-              <img src={qrCode} alt="VietQR" className="w-[200px] h-[200px] bg-white p-2 rounded-lg" />
-              <p className="text-sm mt-3 text-gray-400">Đang chờ thanh toán...</p>
-              <button 
-                onClick={() => { setQrCode(null); }} 
-                className="mt-4 text-sm text-red-500 underline hover:cursor-pointer"
-              >
-                Hủy chờ thanh toán QR
-              </button>
-            </div>
-          ) : (
-            <button
-              className="w-full py-[12px] rounded-[9999px] bg-gradient-to-r from-[#E30713] to-[#FE6969] font-semibold mb-3 hover:cursor-pointer"
-              onClick={handlePayment}
-            >
-              Thanh toán
-            </button>
-          )}
+          <button
+            className="w-full py-[12px] rounded-[9999px] bg-gradient-to-r from-[#E30713] to-[#FE6969] font-semibold mb-3 hover:cursor-pointer"
+            onClick={handlePayment}
+          >
+            Thanh toán
+          </button>
 
           <button className="w-full py-[10px] rounded-[9999px] border border-white text-white mb-4 hover:cursor-pointer">
             Quay lại

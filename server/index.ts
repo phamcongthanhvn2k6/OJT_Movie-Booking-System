@@ -3,13 +3,23 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { query } from './config/db.js';
 import * as crypto from 'crypto';
+import { PayOS } from '@payos/node';
 import path from 'path';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const SECRET_KEY = process.env.VIETQR_SECRET_KEY || "yoursecretkeyhere";
+
+const PAYOS_CLIENT_ID = process.env.Client_ID || "";
+const PAYOS_API_KEY = process.env.API_Key || "";
+const PAYOS_CHECKSUM_KEY = process.env.Checksum_Key || "";
+
+const payos = new PayOS({
+  clientId: PAYOS_CLIENT_ID,
+  apiKey: PAYOS_API_KEY,
+  checksumKey: PAYOS_CHECKSUM_KEY
+});
 
 app.use(cors());
 app.use(express.json());
@@ -100,62 +110,54 @@ app.get('/:table/:id', async (req, res) => {
 
 
 /**
- * Payment Integration from payment.server.ts
+ * Payment Integration using PayOS
  */
 app.post('/api/payment/create', async (req, res) => {
   const { orderId, amount, description } = req.body;
   
   try {
-    const response = await fetch('https://api.vietqr.io/v2/generate', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          accountNo: "27072006", 
-          accountName: "PHAM CONG THANH", 
-          acqId: "970403", 
-          amount: amount,
-          addInfo: description, 
-          format: "text",
-          template: "qr_only"
-        })
-    });
+    // orderCode của PayOS cần là số nguyên, ta dùng số ngẫu nhiên 6 chữ số ghép vào
+    const orderCode = Number(String(Date.now()).slice(-6) + Math.floor(Math.random() * 100));
 
-    const data = await response.json();
-    if (data.code === '00') {
-      return res.status(200).json({
-        success: true,
-        qrCode: data.data.qrDataURL,
-        checkoutUrl: `http://localhost:5173/checkout/${orderId}` 
-      });
-    } else {
-      return res.status(400).json({ success: false, message: data.desc });
-    }
+    // Cập nhật transaction_id vào dữ liệu Payment để đối chiếu khi Webhook trả về
+    await query(`UPDATE [payments] SET transaction_id = ? WHERE booking_id = ?`, [orderCode.toString(), orderId]);
+
+    const body = {
+        orderCode: orderCode,
+        amount: amount,
+        description: description.substring(0, 25), // PayOS giới hạn độ dài mô tả
+        returnUrl: `http://localhost:5173/payment-success`,
+        cancelUrl: `http://localhost:5173/payment-cancel`
+    };
+
+    const paymentLinkRes = await payos.paymentRequests.create(body);
+
+    return res.status(200).json({
+      success: true,
+      checkoutUrl: paymentLinkRes.checkoutUrl
+    });
 
   } catch (error) {
     const err = error as Error;
-    console.error("Lỗi tạo mã QR:", err.message);
-    return res.status(500).json({ success: false, message: "Lỗi tạo mã QR", error: err.message });
+    console.error("Lỗi tạo link thanh toán PayOS:", err.message);
+    return res.status(500).json({ success: false, message: "Lỗi tạo link thanh toán", error: err.message });
   }
 });
 
 app.post('/api/payment/webhook', async (req, res) => {
-  const webhookData = req.body;
-
-  const dataToVerify = `${webhookData.amount}-${webhookData.orderCode}-${webhookData.description}`;
-  const expectedSignature = crypto
-    .createHmac('sha256', SECRET_KEY)
-    .update(dataToVerify)
-    .digest('hex');
-
-  if (webhookData.signature && webhookData.signature !== expectedSignature) {
-    return res.status(400).send("Signature Invalid");
-  }
-
   try {
+    // log webhook content
+    console.log("Receive webhook from PayOS");
+    
+    // verify webhook
+    const webhookData = await payos.webhooks.verify(req.body);
+
+    if (req.body.code !== '00') {
+       return res.status(200).json({ success: true, message: "Webhook không phải là sự kiện thành công" });
+    }
+
     // Check if payment exists
-    const paymentCheck = await query(`SELECT * FROM [payments] WHERE booking_id = ?`, [webhookData.orderCode.toString()]);
+    const paymentCheck = await query(`SELECT * FROM [payments] WHERE transaction_id = ?`, [webhookData.orderCode.toString()]);
       
     if (paymentCheck.length === 0) {
         return res.status(404).send("Payment record not found");
@@ -171,14 +173,14 @@ app.post('/api/payment/webhook', async (req, res) => {
     await query(`
         UPDATE [payments] 
         SET payment_status = 'COMPLETED', 
-            payment_method = 'VietQR', 
+            payment_method = 'PayOS', 
             payment_time = GETDATE(), 
             updated_at = GETDATE() 
         WHERE id = ?
       `, [payment.id]);
 
     console.log(`[Webhook] Payment ${payment.id} processed successfully.`);
-    return res.status(200).send("Webhook received and processed");
+    return res.status(200).json({ success: true });
   } catch (error) {
     const err = error as Error;
     console.error("[Webhook Error]:", err.message);
