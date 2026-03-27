@@ -18,11 +18,11 @@ const PAYOS_CLIENT_ID = process.env.Client_ID || "";
 const PAYOS_API_KEY = process.env.API_Key || "";
 const PAYOS_CHECKSUM_KEY = process.env.Checksum_Key || "";
 
-const payos = new PayOS({
-  clientId: PAYOS_CLIENT_ID,
-  apiKey: PAYOS_API_KEY,
-  checksumKey: PAYOS_CHECKSUM_KEY
-});
+const payos = new PayOS(
+  PAYOS_CLIENT_ID,
+  PAYOS_API_KEY,
+  PAYOS_CHECKSUM_KEY
+);
 
 app.use(cors());
 app.use(express.json());
@@ -55,9 +55,16 @@ app.get('/:table', async (req, res) => {
     const values: string[] = [];
     
     if (filters.length > 0) {
-      const conditions = filters.map((key, index) => {
-        values.push(String(req.query[key]));
-        return `[${key}] = ?`;
+      const conditions = filters.map((key) => {
+        const val = req.query[key];
+        if (Array.isArray(val)) {
+          const placeholders = val.map(() => '?').join(', ');
+          values.push(...val.map(String));
+          return `[${key}] IN (${placeholders})`;
+        } else {
+          values.push(String(val));
+          return `[${key}] = ?`;
+        }
       });
       queryStr += ` WHERE ${conditions.join(' AND ')}`;
     }
@@ -122,34 +129,34 @@ app.get('/api/user-bookings/:userId', async (req, res) => {
     const queryStr = `
       SELECT 
           b.id as booking_id,
-          b.booking_time,
-          b.total_price,
+          b.created_at as booking_time,
+          b.total_price_movie as total_price,
           p.payment_status,
           p.payment_method,
           p.transaction_id,
           m.title as movie_title,
-          m.poster_url,
+          m.image as poster_url,
           st.start_time,
           st.end_time,
           th.name as theater_name,
           scr.name as screen_name,
-          STRING_AGG(s.row_name + CAST(s.number AS VARCHAR), ', ') as seat_numbers
+          STRING_AGG(s.seat_number, ', ') as seat_numbers
       FROM bookings b
       LEFT JOIN payments p ON p.booking_id = b.id
       LEFT JOIN showtimes st ON b.showtime_id = st.id
       LEFT JOIN movies m ON st.movie_id = m.id
-      LEFT JOIN theaters th ON st.theater_id = th.id
       LEFT JOIN screens scr ON st.screen_id = scr.id
+      LEFT JOIN theaters th ON scr.theater_id = th.id
       LEFT JOIN booking_seats bs ON bs.booking_id = b.id
       LEFT JOIN seats s ON bs.seat_id = s.id
       WHERE b.user_id = ?
       GROUP BY 
-          b.id, b.booking_time, b.total_price, 
+          b.id, b.created_at, b.total_price_movie, 
           p.payment_status, p.payment_method, p.transaction_id,
-          m.title, m.poster_url, 
+          m.title, m.image, 
           st.start_time, st.end_time,
           th.name, scr.name
-      ORDER BY b.booking_time DESC
+      ORDER BY b.created_at DESC
     `;
     const result = await query(queryStr, [userId]);
     res.json(result);
@@ -181,7 +188,7 @@ app.post('/api/payment/create', async (req, res) => {
         cancelUrl: `http://localhost:5173/payment-cancel`
     };
 
-    const paymentLinkRes = await payos.paymentRequests.create(body);
+    const paymentLinkRes = await payos.createPaymentLink(body);
 
     return res.status(200).json({
       success: true,
@@ -201,7 +208,7 @@ app.post('/api/payment/webhook', async (req, res) => {
     console.log("Receive webhook from PayOS");
     
     // verify webhook
-    const webhookData = await payos.webhooks.verify(req.body);
+    const webhookData = await payos.verifyPaymentWebhookData(req.body);
 
     if (req.body.code !== '00') {
        return res.status(200).json({ success: true, message: "Webhook không phải là sự kiện thành công" });

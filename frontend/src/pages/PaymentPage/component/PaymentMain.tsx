@@ -157,7 +157,7 @@ const PaymentMain = () => {
         const res = await axios.post(`${import.meta.env.VITE_LOCAL}/api/payment/create`, {
           orderId: booking.id,
           amount: booking.total_price_movie,
-          description: `Thanh toan ve ${booking.id.substring(0,8)}`
+          description: `Thanh toan ve ${String(booking.id).substring(0,8)}`
         });
 
         if (res.data.success) {

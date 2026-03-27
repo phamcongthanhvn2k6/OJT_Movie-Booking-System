@@ -33,3 +33,12 @@ Trong này có chứa `.env` khai báo biến môi trường cho Vite (`VITE_LOC
 npm run dev
 ```
 Sau đó truy cập link localhost:5173 trên trình duyệt để sử dụng.
+
+### 3. Đăng Nhập 
+-USER: 
+- Email: [user@gmail.com]
+- Password: [password123]
+
+-ADMIN: 
+- Email: [admin@gmail.com]
+- Password: [password123]
