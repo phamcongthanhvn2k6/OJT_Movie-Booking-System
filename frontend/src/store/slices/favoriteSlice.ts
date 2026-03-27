@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { RootState } from '../index'; 
@@ -40,7 +41,12 @@ export const fetchFavorites = createAsyncThunk(
     try {
       // B1: Lấy danh sách ID mới nhất từ Server
       const userRes = await axios.get(`${BASE_URL}/users/${currentUser.id}`);
-      const favoriteIds: number[] = userRes.data.favorites || [];
+      let favoriteIds: number[] = [];
+      if (typeof userRes.data.favorites === 'string') {
+          try { favoriteIds = JSON.parse(userRes.data.favorites); } catch { favoriteIds = []; }
+      } else if (Array.isArray(userRes.data.favorites)) {
+          favoriteIds = userRes.data.favorites;
+      }
 
       if (favoriteIds.length === 0) return [];
 
@@ -71,7 +77,12 @@ export const addToFavorites = createAsyncThunk(
     try {
       // B1: Lấy favorites hiện tại từ Server
       const userRes = await axios.get(`${BASE_URL}/users/${currentUser.id}`);
-      const currentFavorites: number[] = userRes.data.favorites || [];
+      let currentFavorites: number[] = [];
+      if (typeof userRes.data.favorites === 'string') {
+          try { currentFavorites = JSON.parse(userRes.data.favorites); } catch { currentFavorites = []; }
+      } else if (Array.isArray(userRes.data.favorites)) {
+          currentFavorites = userRes.data.favorites;
+      }
 
       // B2: Check trùng (Ép kiểu Number cho chắc chắn)
       if (currentFavorites.some(id => Number(id) === Number(movie.id))) {
@@ -79,11 +90,11 @@ export const addToFavorites = createAsyncThunk(
       }
 
       // B3: Thêm ID mới
-      const updatedFavorites = [...currentFavorites, movie.id];
+      const updatedFavorites = [...currentFavorites, Number(movie.id)];
 
       // B4: Cập nhật Server
       await axios.patch(`${BASE_URL}/users/${currentUser.id}`, {
-        favorites: updatedFavorites,
+        favorites: JSON.stringify(updatedFavorites),
       });
 
       return movie; // Trả về Object để Redux hiển thị
@@ -107,14 +118,19 @@ export const removeFromFavorites = createAsyncThunk(
     try {
       // B1: Lấy favorites hiện tại từ Server
       const userRes = await axios.get(`${BASE_URL}/users/${currentUser.id}`);
-      const currentFavorites: number[] = userRes.data.favorites || [];
+      let currentFavorites: number[] = [];
+      if (typeof userRes.data.favorites === 'string') {
+          try { currentFavorites = JSON.parse(userRes.data.favorites); } catch(e) { currentFavorites = []; }
+      } else if (Array.isArray(userRes.data.favorites)) {
+          currentFavorites = userRes.data.favorites;
+      }
 
       // B2: Lọc bỏ ID cần xóa (FIX: Ép kiểu Number để so sánh chính xác)
       const updatedFavorites = currentFavorites.filter((id) => Number(id) !== Number(movieId));
 
       // B3: Cập nhật Server
       await axios.patch(`${BASE_URL}/users/${currentUser.id}`, {
-        favorites: updatedFavorites,
+        favorites: JSON.stringify(updatedFavorites),
       });
 
       return movieId; // Trả về ID để Redux xóa khỏi state
