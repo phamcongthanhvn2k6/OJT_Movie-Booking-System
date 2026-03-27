@@ -3,7 +3,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { query } from './config/db.js';
 import * as crypto from 'crypto';
-import { PayOS } from '@payos/node';
+// @ts-ignore
+import PayOSLib from '@payos/node';
+// @ts-ignore
+const PayOS = PayOSLib.PayOS || PayOSLib.default || PayOSLib;
 import path from 'path';
 
 dotenv.config();
@@ -104,6 +107,54 @@ app.get('/:table/:id', async (req, res) => {
     res.json(result[0]);
   } catch (err) {
     console.error(`Error fetching ${table} by id:`, err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+/**
+ * Get User Bookings with Ticket Details
+ * GET /api/user-bookings/:userId
+ */
+app.get('/api/user-bookings/:userId', async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
+    const queryStr = `
+      SELECT 
+          b.id as booking_id,
+          b.booking_time,
+          b.total_price,
+          p.payment_status,
+          p.payment_method,
+          p.transaction_id,
+          m.title as movie_title,
+          m.poster_url,
+          st.start_time,
+          st.end_time,
+          th.name as theater_name,
+          scr.name as screen_name,
+          STRING_AGG(s.row_name + CAST(s.number AS VARCHAR), ', ') as seat_numbers
+      FROM bookings b
+      LEFT JOIN payments p ON p.booking_id = b.id
+      LEFT JOIN showtimes st ON b.showtime_id = st.id
+      LEFT JOIN movies m ON st.movie_id = m.id
+      LEFT JOIN theaters th ON st.theater_id = th.id
+      LEFT JOIN screens scr ON st.screen_id = scr.id
+      LEFT JOIN booking_seats bs ON bs.booking_id = b.id
+      LEFT JOIN seats s ON bs.seat_id = s.id
+      WHERE b.user_id = ?
+      GROUP BY 
+          b.id, b.booking_time, b.total_price, 
+          p.payment_status, p.payment_method, p.transaction_id,
+          m.title, m.poster_url, 
+          st.start_time, st.end_time,
+          th.name, scr.name
+      ORDER BY b.booking_time DESC
+    `;
+    const result = await query(queryStr, [userId]);
+    res.json(result);
+  } catch (err) {
+    console.error("Error fetching user bookings:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });

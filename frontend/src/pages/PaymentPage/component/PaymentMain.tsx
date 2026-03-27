@@ -23,13 +23,13 @@ const PaymentMain = () => {
   const [showtime, setShowtime] = useState<Showtime | null>(null);
   const [selectedMethod, setSelectedMethod] = useState<string>("");
   const [payment, setPayment] = useState<Payment | null>(null);
+  
   // fetch Booking
   useEffect(() => {
     if (!bookingId) return;
 
     const fetchBooking = async () => {
       try {
-        // bookingId là string → truyền thẳng
         const res = await bookingAPI.getById(bookingId);
 
         if (!res || !res.data) {
@@ -52,7 +52,6 @@ const PaymentMain = () => {
 
     const fetchMovie = async () => {
       try {
-        // movieId là string → truyền thẳng
         const res = await movieAPI.getById({ id: movieId });
 
         if (!res || !res.data) {
@@ -158,7 +157,7 @@ const PaymentMain = () => {
         const res = await axios.post(`${import.meta.env.VITE_LOCAL}/api/payment/create`, {
           orderId: booking.id,
           amount: booking.total_price_movie,
-          description: `Thanh toan ve ${booking.id}`
+          description: `Thanh toan ve ${booking.id.substring(0,8)}`
         });
 
         if (res.data.success) {
@@ -211,7 +210,6 @@ const PaymentMain = () => {
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 px-4">
         {/* LEFT */}
         <div className="flex flex-col gap-6">
-          {/* Thông tin phim */}
           <div className="bg-[#151A21] rounded-[16px] p-6 text-white">
             <p className="font-semibold mb-4">Thông tin phim</p>
 
@@ -231,7 +229,6 @@ const PaymentMain = () => {
               <div>
                 <p className="text-gray-400 mb-1">Ngày giờ chiếu</p>
                 <p className="font-medium text-[#F97316]">
-                  {/*giờ chiếu */}
                   {showtime?.start_time
                     ? new Date(showtime.start_time).toLocaleTimeString(
                         "vi-VN",
@@ -244,7 +241,6 @@ const PaymentMain = () => {
                       )
                     : ""}
                   <span> - </span>
-                  {/*ngày chiếu */}
                   <span className="text-white">
                     {showtime?.start_time
                       ? `${new Date(showtime.start_time).getDate()}/${
@@ -267,7 +263,6 @@ const PaymentMain = () => {
             </div>
           </div>
 
-          {/* Thông tin thanh toán */}
           <div className="bg-[#151A21] rounded-[16px] p-6 text-white">
             <p className="font-semibold mb-4">Thông tin thanh toán</p>
 
@@ -329,13 +324,10 @@ const PaymentMain = () => {
                     : ""
                 }`}
               >
-                {/* radio */}
                 <div
                   className={`w-4 h-4 rounded-full border border-current 
           ${selectedMethod === item.name ? "bg-red-500" : ""}`}
                 />
-
-                {/* icon + text */}
                 <p className="font-medium flex items-center gap-2">
                   <img
                     src={item.icon}
@@ -348,7 +340,6 @@ const PaymentMain = () => {
             ))}
           </div>
 
-          {/* Chi phí */}
           <div className="text-sm mb-6">
             <p className="font-semibold mb-3">Chi phí</p>
 
@@ -368,7 +359,6 @@ const PaymentMain = () => {
             </div>
           </div>
 
-          {/* Button */}
           <button
             className="w-full py-[12px] rounded-[9999px] bg-gradient-to-r from-[#E30713] to-[#FE6969] font-semibold mb-3 hover:cursor-pointer"
             onClick={handlePayment}
