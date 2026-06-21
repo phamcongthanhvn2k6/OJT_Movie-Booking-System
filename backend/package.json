@@ -8,7 +8,8 @@
     "start": "tsx src/index.ts",
     "db:init": "tsx src/init_db.ts",
     "db:seed": "tsx src/seed_dev.ts",
-    "db:migrate": "tsx src/migrate_db.ts"
+    "db:migrate": "tsx src/migrate_db.ts",
+    "db:fix-showtimes": "tsx src/fix_showtimes.ts"
   },
   "dependencies": {
     "@payos/node": "^1.0.10",

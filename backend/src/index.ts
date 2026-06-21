@@ -30,6 +30,39 @@ app.use(express.json());
 const ALLOWED_TABLES = Object.keys(modelsMap);
 
 /**
+ * Helper to dynamically shift showtimes to "today" or "tomorrow" relative to current server time for persistent demo purposes.
+ */
+const adjustShowtimeForDemo = (st: any) => {
+  if (!st) return st;
+  const doc = st.toObject ? st.toObject() : st;
+  
+  const originalStart = new Date(doc.start_time || Date.now());
+  
+  // Set time from original start time
+  const now = new Date();
+  const adjustedStart = new Date(now);
+  adjustedStart.setHours(originalStart.getHours(), originalStart.getMinutes(), 0, 0);
+  
+  // Distribute showtimes dynamically: Today, Tomorrow, and Day after based on ID hash
+  const idStr = String(doc._id || '');
+  const dayOffset = (idStr.charCodeAt(idStr.length - 1) || 0) % 3;
+  adjustedStart.setDate(now.getDate() + dayOffset);
+  
+  const duration = (doc.end_time && doc.start_time) 
+    ? (new Date(doc.end_time).getTime() - originalStart.getTime())
+    : (120 * 60000); // 2 hours default
+    
+  const adjustedEnd = new Date(adjustedStart.getTime() + duration);
+  
+  return {
+    ...doc,
+    start_time: adjustedStart,
+    end_time: adjustedEnd,
+    id: doc._id
+  };
+};
+
+/**
  * Generic GET Endpoint mimicking json-server
  * GET /:table
  */
@@ -64,7 +97,10 @@ app.get('/:table', async (req, res) => {
       query = query.sort({ [req.query._sort]: order });
     }
 
-    const items = await query;
+    let items = await query;
+    if (table === 'showtimes') {
+      items = items.map(adjustShowtimeForDemo);
+    }
     res.json(items);
   } catch (err) {
     console.error(`Error fetching ${table}:`, err);
@@ -87,9 +123,12 @@ app.get('/:table/:id', async (req, res) => {
   const Model = modelsMap[table];
 
   try {
-    const item = await Model.findById(id);
+    let item = await Model.findById(id);
     if (!item) {
       return res.status(404).json({});
+    }
+    if (table === 'showtimes') {
+      item = adjustShowtimeForDemo(item);
     }
     res.json(item);
   } catch (err) {
@@ -111,13 +150,14 @@ app.get('/api/user-bookings/:userId', async (req, res) => {
 
     for (const booking of bookings) {
       const payment = await modelsMap.payments.findOne({ booking_id: booking._id });
-      const showtime = await modelsMap.showtimes.findById(booking.showtime_id);
+      let showtime = await modelsMap.showtimes.findById(booking.showtime_id);
       
       let movie = null;
       let screen = null;
       let theater = null;
 
       if (showtime) {
+        showtime = adjustShowtimeForDemo(showtime);
         movie = await modelsMap.movies.findById(showtime.movie_id);
         screen = await modelsMap.screens.findById(showtime.screen_id);
         if (screen) {
