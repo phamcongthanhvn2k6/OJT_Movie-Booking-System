@@ -12,6 +12,9 @@ import { Promotion } from "./pages/promotions/Promotion";
 import { TicketPrice } from "./pages/ticketPrice/TicketPrice";
 import { MovieDetail } from "./pages/MovieDetail/MovieDetail";
 import { PaymentSuccessPage } from "./pages/PaymentSuccessPage/PaymentSuccessPage";
+import { PolicyPage } from "./pages/policy/PolicyPage";
+import { FAQPage } from "./pages/faq/FAQPage";
+import { ContactPage } from "./pages/contact/ContactPage";
 
 // --- ADMIN PAGES ---
 import AdminLayout from "./components/admin/AdminLayout";
@@ -47,12 +50,16 @@ const RouterSetup = () => {
       <Route path="/events/:id" element={<EventsPageDetail />} />
       <Route path="/showtimes" element={<ShowtimePage />} />
       <Route path="/favorites" element={<FavoritesPage />} />
+      <Route path="/chinh-sach" element={<PolicyPage />} />
+      <Route path="/hoi-dap" element={<FAQPage />} />
+      <Route path="/lien-he" element={<ContactPage />} />
       {/* Route Chi tiết phim (Dynamic ID) */}
       <Route path="/movie/:id" element={<MovieDetail />} />
       <Route path="/payment/:movieId/:bookingId" element={<PaymentPage />} />
       <Route path="/payment-success" element={<PaymentSuccessPage />} />
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/my-tickets" element={<MyTicketsPage />} />
+
 
       {/* --- CÁC ROUTE ADMIN (PROTECTED) --- */}
       <Route

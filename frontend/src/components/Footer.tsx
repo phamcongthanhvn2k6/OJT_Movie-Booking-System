@@ -1,14 +1,15 @@
 import React from 'react';
 import { Facebook, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const footerMenu: string[] = [
-    'Chính sách',
-    'Lịch chiếu',
-    'Tin tức',
-    'Giá vé',
-    'Hỏi đáp',
-    'Liên hệ'
+  const footerMenu = [
+    { label: 'Chính sách', path: '/chinh-sach' },
+    { label: 'Lịch chiếu', path: '/showtimes' },
+    { label: 'Tin tức', path: '/tin-tuc' },
+    { label: 'Giá vé', path: '/ticketprice' },
+    { label: 'Hỏi đáp', path: '/hoi-dap' },
+    { label: 'Liên hệ', path: '/lien-he' }
   ];
 
   return (
@@ -20,16 +21,17 @@ const Footer: React.FC = () => {
           <ul className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             {footerMenu.map((item, index) => (
               <li key={index}>
-                <a 
-                  href="#" 
+                <Link 
+                  to={item.path} 
                   className="text-sm hover:text-red-500 transition-colors duration-200 font-medium"
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
+
 
         {/* Social Media & App Downloads - All in One Row */}
         <div className="flex flex-wrap justify-center items-center gap-6 mb-8">

@@ -99,7 +99,31 @@ app.get('/:table', async (req, res) => {
 
     let items = await query;
     if (table === 'showtimes') {
-      items = items.map(adjustShowtimeForDemo);
+      const now = new Date();
+      const replicated: any[] = [];
+      for (const item of items) {
+        const doc = item.toObject ? item.toObject() : item;
+        const originalStart = new Date(doc.start_time || Date.now());
+        const duration = (doc.end_time && doc.start_time) 
+          ? (new Date(doc.end_time).getTime() - originalStart.getTime())
+          : (120 * 60000); // 2 hours default
+          
+        for (let i = 0; i < 14; i++) {
+          const adjustedStart = new Date(now);
+          adjustedStart.setDate(now.getDate() + i);
+          adjustedStart.setHours(originalStart.getHours(), originalStart.getMinutes(), 0, 0);
+          const adjustedEnd = new Date(adjustedStart.getTime() + duration);
+          
+          replicated.push({
+            ...doc,
+            _id: `${doc._id}_day_${i}`,
+            id: `${doc._id}_day_${i}`,
+            start_time: adjustedStart,
+            end_time: adjustedEnd
+          });
+        }
+      }
+      items = replicated;
     }
     res.json(items);
   } catch (err) {
@@ -123,6 +147,37 @@ app.get('/:table/:id', async (req, res) => {
   const Model = modelsMap[table];
 
   try {
+    if (table === 'showtimes' && id.includes('_day_')) {
+      const parts = id.split('_day_');
+      const originalId = parts[0];
+      const dayOffset = parseInt(parts[1], 10) || 0;
+      
+      let item = await Model.findById(originalId);
+      if (!item) {
+        return res.status(404).json({});
+      }
+      
+      const doc = item.toObject ? item.toObject() : item;
+      const originalStart = new Date(doc.start_time || Date.now());
+      const duration = (doc.end_time && doc.start_time)
+        ? (new Date(doc.end_time).getTime() - originalStart.getTime())
+        : (120 * 60000);
+        
+      const now = new Date();
+      const adjustedStart = new Date(now);
+      adjustedStart.setDate(now.getDate() + dayOffset);
+      adjustedStart.setHours(originalStart.getHours(), originalStart.getMinutes(), 0, 0);
+      const adjustedEnd = new Date(adjustedStart.getTime() + duration);
+      
+      return res.json({
+        ...doc,
+        _id: id,
+        id: id,
+        start_time: adjustedStart,
+        end_time: adjustedEnd
+      });
+    }
+
     let item = await Model.findById(id);
     if (!item) {
       return res.status(404).json({});
