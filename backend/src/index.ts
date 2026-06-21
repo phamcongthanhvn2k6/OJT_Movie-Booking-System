@@ -1,13 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { query } from './config/db.js';
+import { connectDB } from './config/db.js';
+import { modelsMap } from './models/index.js';
 import * as crypto from 'crypto';
 // @ts-ignore
 import PayOSLib from '@payos/node';
 // @ts-ignore
 const PayOS = PayOSLib.PayOS || PayOSLib.default || PayOSLib;
-import path from 'path';
 
 dotenv.config();
 
@@ -27,17 +27,11 @@ const payos = new PayOS(
 app.use(cors());
 app.use(express.json());
 
-// Tables allowed for dynamic querying to prevent SQL injection
-const ALLOWED_TABLES = [
-  'users', 'genres', 'theaters', 'screens', 'seats', 'movies', 
-  'showtimes', 'booking_seats', 'payments', 'bookings', 
-  'ticket_prices', 'events', 'News'
-];
+const ALLOWED_TABLES = Object.keys(modelsMap);
 
 /**
  * Generic GET Endpoint mimicking json-server
  * GET /:table
- * Supports query params like /showtimes?movie_id=1
  */
 app.get('/:table', async (req, res) => {
   const table = req.params.table;
@@ -45,47 +39,32 @@ app.get('/:table', async (req, res) => {
     return res.status(404).json({ error: "Table not found." });
   }
 
+  const Model = modelsMap[table];
+
   try {
-    let queryStr = `SELECT * FROM [${table}]`;
-    const queryParams = Object.keys(req.query);
-    
-    // Simple WHERE clause for exact matches
-    const filters = queryParams.filter(key => key !== '_sort' && key !== '_order' && key !== '_limit' && key !== '_page' && key !== 'q');
-    
-    const values: string[] = [];
-    
-    if (filters.length > 0) {
-      const conditions = filters.map((key) => {
-        const val = req.query[key];
-        if (Array.isArray(val)) {
-          const placeholders = val.map(() => '?').join(', ');
-          values.push(...val.map(String));
-          return `[${key}] IN (${placeholders})`;
-        } else {
-          values.push(String(val));
-          return `[${key}] = ?`;
-        }
-      });
-      queryStr += ` WHERE ${conditions.join(' AND ')}`;
+    const queryObj: any = {};
+    for (const key in req.query) {
+      if (['_sort', '_order', '_limit', '_page', 'q'].includes(key)) continue;
+      
+      const val = req.query[key];
+      // Map 'id' parameter to '_id' for MongoDB matching
+      const cleanKey = key === 'id' ? '_id' : key;
+      
+      if (Array.isArray(val)) {
+        queryObj[cleanKey] = { $in: val };
+      } else {
+        queryObj[cleanKey] = val;
+      }
     }
 
-    const sort = req.query._sort;
-    const order = req.query._order === 'desc' ? 'DESC' : 'ASC';
-    if (sort && typeof sort === 'string') {
-        const cleanSort = sort.replace(/[^a-zA-Z0-9_]/g, '');
-        queryStr += ` ORDER BY [${cleanSort}] ${order}`;
+    let query = Model.find(queryObj);
+    
+    if (req.query._sort && typeof req.query._sort === 'string') {
+      const order = req.query._order === 'desc' ? -1 : 1;
+      query = query.sort({ [req.query._sort]: order });
     }
 
-    const result = await query(queryStr, values);
-    
-    let items = result;
-    if (table === 'events') {
-         items = items.map((item: { venues?: string; [key: string]: unknown }) => ({
-            ...item,
-            venues: item.venues ? JSON.parse(item.venues) : []
-         }))
-    }
-    
+    const items = await query;
     res.json(items);
   } catch (err) {
     console.error(`Error fetching ${table}:`, err);
@@ -105,13 +84,14 @@ app.get('/:table/:id', async (req, res) => {
     return res.status(404).json({ error: "Table not found." });
   }
 
+  const Model = modelsMap[table];
+
   try {
-    const result = await query(`SELECT * FROM [${table}] WHERE id = ?`, [id]);
-      
-    if (result.length === 0) {
+    const item = await Model.findById(id);
+    if (!item) {
       return res.status(404).json({});
     }
-    res.json(result[0]);
+    res.json(item);
   } catch (err) {
     console.error(`Error fetching ${table} by id:`, err);
     res.status(500).json({ error: "Internal Server Error" });
@@ -126,46 +106,59 @@ app.get('/api/user-bookings/:userId', async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const queryStr = `
-      SELECT 
-          b.id as booking_id,
-          b.created_at as booking_time,
-          b.total_price_movie as total_price,
-          p.payment_status,
-          p.payment_method,
-          p.transaction_id,
-          m.title as movie_title,
-          m.image as poster_url,
-          st.start_time,
-          st.end_time,
-          th.name as theater_name,
-          scr.name as screen_name,
-          STRING_AGG(s.seat_number, ', ') as seat_numbers
-      FROM bookings b
-      LEFT JOIN payments p ON p.booking_id = b.id
-      LEFT JOIN showtimes st ON b.showtime_id = st.id
-      LEFT JOIN movies m ON st.movie_id = m.id
-      LEFT JOIN screens scr ON st.screen_id = scr.id
-      LEFT JOIN theaters th ON scr.theater_id = th.id
-      LEFT JOIN booking_seats bs ON bs.booking_id = b.id
-      LEFT JOIN seats s ON bs.seat_id = s.id
-      WHERE b.user_id = ?
-      GROUP BY 
-          b.id, b.created_at, b.total_price_movie, 
-          p.payment_status, p.payment_method, p.transaction_id,
-          m.title, m.image, 
-          st.start_time, st.end_time,
-          th.name, scr.name
-      ORDER BY b.created_at DESC
-    `;
-    const result = await query(queryStr, [userId]);
-    res.json(result);
+    const bookings = await modelsMap.bookings.find({ user_id: userId }).sort({ booking_time: -1 });
+    const results = [];
+
+    for (const booking of bookings) {
+      const payment = await modelsMap.payments.findOne({ booking_id: booking._id });
+      const showtime = await modelsMap.showtimes.findById(booking.showtime_id);
+      
+      let movie = null;
+      let screen = null;
+      let theater = null;
+
+      if (showtime) {
+        movie = await modelsMap.movies.findById(showtime.movie_id);
+        screen = await modelsMap.screens.findById(showtime.screen_id);
+        if (screen) {
+          theater = await modelsMap.theaters.findById(screen.theater_id);
+        }
+      }
+
+      const bookingSeats = await modelsMap.booking_seats.find({ booking_id: booking._id });
+      const seatNumbers: string[] = [];
+
+      for (const bs of bookingSeats) {
+        const seat = await modelsMap.seats.findById(bs.seat_id);
+        if (seat) {
+          const seatNum = (seat as any).seat_number || (seat.row_name && seat.number ? `${seat.row_name}${seat.number}` : seat._id);
+          seatNumbers.push(seatNum);
+        }
+      }
+
+      results.push({
+        booking_id: booking._id,
+        booking_time: booking.booking_time,
+        total_price: booking.total_price_movie || booking.total_price,
+        payment_status: payment?.payment_status || 'PENDING',
+        payment_method: payment?.payment_method || null,
+        transaction_id: payment?.transaction_id || null,
+        movie_title: movie?.title || null,
+        poster_url: movie?.poster_url || null,
+        start_time: showtime?.start_time || null,
+        end_time: showtime?.end_time || null,
+        theater_name: theater?.name || null,
+        screen_name: screen?.name || null,
+        seat_numbers: seatNumbers.join(', ')
+      });
+    }
+
+    res.json(results);
   } catch (err) {
     console.error("Error fetching user bookings:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
 
 /**
  * Payment Integration using PayOS
@@ -174,16 +167,18 @@ app.post('/api/payment/create', async (req, res) => {
   const { orderId, amount, description } = req.body;
   
   try {
-    // orderCode của PayOS cần là số nguyên, ta dùng số ngẫu nhiên 6 chữ số ghép vào
     const orderCode = Number(String(Date.now()).slice(-6) + Math.floor(Math.random() * 100));
 
-    // Cập nhật transaction_id vào dữ liệu Payment để đối chiếu khi Webhook trả về
-    await query(`UPDATE [payments] SET transaction_id = ? WHERE booking_id = ?`, [orderCode.toString(), orderId]);
+    // Update payment record with the transaction_id (orderCode)
+    await modelsMap.payments.updateOne(
+      { booking_id: orderId },
+      { $set: { transaction_id: orderCode.toString(), updated_at: new Date() } }
+    );
 
     const body = {
         orderCode: orderCode,
         amount: amount,
-        description: description.substring(0, 25), // PayOS giới hạn độ dài mô tả
+        description: description.substring(0, 25),
         returnUrl: `http://localhost:5173/payment-success`,
         cancelUrl: `http://localhost:5173/payment-cancel`
     };
@@ -204,40 +199,40 @@ app.post('/api/payment/create', async (req, res) => {
 
 app.post('/api/payment/webhook', async (req, res) => {
   try {
-    // log webhook content
     console.log("Receive webhook from PayOS");
-    
-    // verify webhook
     const webhookData = await payos.verifyPaymentWebhookData(req.body);
 
     if (req.body.code !== '00') {
        return res.status(200).json({ success: true, message: "Webhook không phải là sự kiện thành công" });
     }
 
-    // Check if payment exists
-    const paymentCheck = await query(`SELECT * FROM [payments] WHERE transaction_id = ?`, [webhookData.orderCode.toString()]);
+    const payment = await modelsMap.payments.findOne({ transaction_id: webhookData.orderCode.toString() });
       
-    if (paymentCheck.length === 0) {
+    if (!payment) {
         return res.status(404).send("Payment record not found");
     }
     
-    const payment = paymentCheck[0];
-    
     if (payment.amount !== webhookData.amount) {
-       await query(`UPDATE [payments] SET payment_status = 'PAYMENT_MISMATCH', updated_at = GETDATE() WHERE id = ?`, [payment.id]);
+       await modelsMap.payments.updateOne(
+         { _id: payment._id },
+         { $set: { payment_status: 'PAYMENT_MISMATCH', updated_at: new Date() } }
+       );
        return res.status(200).send("Amount mismatch handled");
     }
     
-    await query(`
-        UPDATE [payments] 
-        SET payment_status = 'COMPLETED', 
-            payment_method = 'PayOS', 
-            payment_time = GETDATE(), 
-            updated_at = GETDATE() 
-        WHERE id = ?
-      `, [payment.id]);
+    await modelsMap.payments.updateOne(
+      { _id: payment._id },
+      {
+        $set: {
+          payment_status: 'COMPLETED',
+          payment_method: 'PayOS',
+          payment_time: new Date(),
+          updated_at: new Date()
+        }
+      }
+    );
 
-    console.log(`[Webhook] Payment ${payment.id} processed successfully.`);
+    console.log(`[Webhook] Payment ${payment._id} processed successfully.`);
     return res.status(200).json({ success: true });
   } catch (error) {
     const err = error as Error;
@@ -246,9 +241,8 @@ app.post('/api/payment/webhook', async (req, res) => {
   }
 });
 
-
 /**
- * Generic POST Enpoint
+ * Generic POST Endpoint
  * POST /:table
  */
 app.post('/:table', async (req, res) => {
@@ -256,6 +250,8 @@ app.post('/:table', async (req, res) => {
   if (!ALLOWED_TABLES.includes(table)) {
     return res.status(404).json({ error: "Table not found." });
   }
+
+  const Model = modelsMap[table];
   
   try {
      const body = req.body;
@@ -264,14 +260,12 @@ app.post('/:table', async (req, res) => {
          body.id = crypto.randomUUID().substring(0, 8);
      }
      
-     const keys = Object.keys(body);
-     const values = keys.map(k => body[k]);
-     const placeholders = keys.map(() => '?').join(', ');
+     // Set string ID as the primary key _id in MongoDB
+     const doc = { ...body, _id: body.id };
+     const newDoc = new Model(doc);
+     await newDoc.save();
      
-     const queryStr = `INSERT INTO [${table}] ([${keys.join('], [')}]) VALUES (${placeholders})`;
-     await query(queryStr, values);
-     
-     res.status(201).json(body);
+     res.status(201).json(newDoc);
   } catch(err) {
       console.error(`Error inserting into ${table}:`, err);
       res.status(500).json({ error: "Internal Server Error" });
@@ -288,29 +282,30 @@ app.patch('/:table/:id', async (req, res) => {
   if (!ALLOWED_TABLES.includes(table)) {
     return res.status(404).json({ error: "Table not found." });
   }
+
+  const Model = modelsMap[table];
   
   try {
      const body = req.body;
-     const keys = Object.keys(body);
-     if (keys.length === 0) return res.status(200).json({});
+     const updated = await Model.findByIdAndUpdate(id, { $set: body }, { new: true });
      
-     const sets = keys.map(k => `[${k}] = ?`);
-     const values = keys.map(k => body[k]);
-     values.push(id); // for the WHERE id = ?
-     
-     const queryStr = `UPDATE [${table}] SET ${sets.join(', ')} WHERE id = ?`;
-     await query(queryStr, values);
-     
-     const updated = await query(`SELECT * FROM [${table}] WHERE id = ?`, [id]);
-     res.status(200).json(updated[0] || {});
+     if (!updated) {
+       return res.status(404).json({ error: "Document not found" });
+     }
+     res.status(200).json(updated);
   } catch(err) {
       console.error(`Error updating ${table}:`, err);
       res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
+// Connect to Database and start server
+const startServer = async () => {
+  await connectDB();
+  app.listen(PORT, () => {
+      console.log(`🚀 API Server running on port ${PORT}`);
+      console.log(`✨ Replacing json-server. Data driven by MongoDB Database.`);
+  });
+};
 
-app.listen(PORT, () => {
-    console.log(`🚀 API Server running on port ${PORT}`);
-    console.log(`✨ Replacing json-server. Data driven by SQL Server Database: ${process.env.DB_NAME}`);
-});
+startServer();
