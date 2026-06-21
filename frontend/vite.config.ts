@@ -12,4 +12,8 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  define: {
+    'import.meta.env.VITE_LOCAL': '(typeof window !== "undefined" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1" ? "https://ojt-movie-booking-system.onrender.com" : "http://localhost:5000")'
+  }
 })
+
