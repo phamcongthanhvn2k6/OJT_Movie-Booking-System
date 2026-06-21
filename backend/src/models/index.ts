@@ -16,11 +16,18 @@ const UserSchema = new Schema({
   email: { type: String },
   password: { type: String },
   role: { type: String },
+  first_name: { type: String },
+  last_name: { type: String },
+  avatar: { type: String },
+  phone: { type: String },
+  address: { type: String },
+  status: { type: String },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now }
 }, { versionKey: false });
 configureSchema(UserSchema);
 export const User = mongoose.model('User', UserSchema, 'users');
+
 
 // 2. Genre Schema
 const GenreSchema = new Schema({
