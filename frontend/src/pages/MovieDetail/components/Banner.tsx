@@ -10,7 +10,7 @@ export const Banner = ({ currentMovie, openTrailer }: BannerProps) => {
     <>
       <div
         className="relative bg-cover bg-center w-full h-[473px] font-[Montserrat]"
-        style={{ backgroundImage: `url(${currentMovie.image})` }}
+        style={{ backgroundImage: `url(${currentMovie.image || currentMovie.poster_url || ""})` }}
       >
         {/* lớp phủ gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900 to-gray-900 lg:opacity-80 opacity-900"></div>
@@ -31,8 +31,8 @@ export const Banner = ({ currentMovie, openTrailer }: BannerProps) => {
           <div className="flex gap-3">
           {/* Hình ảnh phim */}
           <img
-            src={currentMovie.image}
-            alt={currentMovie.title}
+            src={currentMovie.image || currentMovie.poster_url || ""}
+            alt={currentMovie.title || ""}
             className="rounded-[12px] lg:w-[238px] lg:h-[333px] md:w-[200px] md:h-[250px] w-[150px] h-[200px]"
           />
 
@@ -43,13 +43,13 @@ export const Banner = ({ currentMovie, openTrailer }: BannerProps) => {
                 {/* Tiêu đề + loại phim(2/3D)*/}
                 <div className="flex items-center gap-2">
                   <p className="font-bold lg:text-2xl md:text-[20px] text-[16px] leading-8 text-white">
-                    {currentMovie.title.toUpperCase()}
+                    {(currentMovie.title || "").toUpperCase()}
                   </p>
                   <span
                     className="border border-gray-300 rounded-[12px] text-[14px] w-[38px] h-[38px] 
                        flex items-center justify-center"
                   >
-                    {currentMovie.type}
+                    {currentMovie.type || "2D"}
                   </span>
                 </div>
 
@@ -61,19 +61,19 @@ export const Banner = ({ currentMovie, openTrailer }: BannerProps) => {
                           text-[14px] md:text-[16px] lg:text-[14px] leading-[20px] font-[400] text-white
                         "
                 >
-                  <p>{currentMovie.genre}</p>
+                  <p>{currentMovie.genre || ""}</p>
 
                   <span className="opacity-60 lg:hidden">-</span>
 
-                  <p>{currentMovie.country}</p>
+                  <p>{currentMovie.country || ""}</p>
 
                   <span className="opacity-60 lg:hidden">-</span>
 
-                  <p>{currentMovie.duration} phút</p>
+                  <p>{currentMovie.duration || 0} phút</p>
 
                   {/* Desktop mới hiện */}
                   <p className="hidden lg:block">
-                    Đạo diễn: {currentMovie.author}
+                    Đạo diễn: {currentMovie.author || ""}
                   </p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export const Banner = ({ currentMovie, openTrailer }: BannerProps) => {
               <div className="hidden lg:flex flex-col justify-between h-full">
                 <div>
                   <p className="text-[14px] leading-[20px] font-[400] text-white">
-                    Diễn viên: {currentMovie.actors}
+                    Diễn viên: {currentMovie.actors || ""}
                   </p>
                 </div>
 

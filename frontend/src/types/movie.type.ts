@@ -6,6 +6,7 @@ export interface Movie {
   description?: string;
   author?: string;
   image?: string;
+  poster_url?: string;
   trailer?: string;
   type: MovieType;
   genre?: string; // thêm thể loại phim

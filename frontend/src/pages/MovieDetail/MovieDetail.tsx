@@ -37,7 +37,7 @@ export const MovieDetail = () => {
 
   // Gọi API lấy Chi tiết phim & Lịch chiếu khi ID thay đổi
   useEffect(() => {
-    if (id && !isNaN(Number(id))) {
+    if (id) {
       const movieId = id;
 
       // --- FIX QUAN TRỌNG: Reset phim cũ trước khi tải phim mới ---
