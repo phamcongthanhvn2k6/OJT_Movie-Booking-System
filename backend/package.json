@@ -18,8 +18,6 @@
     "express": "^5.2.1",
     "jose": "^6.1.3",
     "mongoose": "^9.7.1",
-    "msnodesqlv8": "^5.1.5",
-    "mssql": "^12.2.0",
     "ojt-ptit-nhom4-root": "file:.."
   },
   "devDependencies": {
