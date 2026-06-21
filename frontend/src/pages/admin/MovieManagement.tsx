@@ -137,7 +137,7 @@ export default function MovieManagement() {
     const payload = {
       ...formData,
       id: String(
-        Math.max(...movieState.list.map((movie) => Number(movie.id))) + 1
+        Math.max(0, ...movieState.list.map((movie) => Number(movie.id)).filter((n) => !isNaN(n))) + 1
       ),
       release_date: new Date(formData.release_date),
       type: formData.type as MovieType,

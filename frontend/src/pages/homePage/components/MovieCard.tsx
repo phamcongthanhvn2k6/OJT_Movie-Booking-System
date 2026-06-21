@@ -8,7 +8,7 @@ import { addToFavorites, removeFromFavorites, fetchFavorites } from '../../../st
 
 // Interface rút gọn cho Card
 export interface Movie {
-  id: number;
+  id: string;
   title: string;
   image: string;
   rating: number;

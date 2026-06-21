@@ -5,7 +5,7 @@ import type { RootState } from '../index';
 
 // Interface Movie hiển thị trên UI
 export interface Movie {
-  id: number;
+  id: string;
   title: string;
   image: string; 
   duration?: string;
@@ -41,11 +41,11 @@ export const fetchFavorites = createAsyncThunk(
     try {
       // B1: Lấy danh sách ID mới nhất từ Server
       const userRes = await axios.get(`${BASE_URL}/users/${currentUser.id}`);
-      let favoriteIds: number[] = [];
+      let favoriteIds: string[] = [];
       if (typeof userRes.data.favorites === 'string') {
           try { favoriteIds = JSON.parse(userRes.data.favorites); } catch { favoriteIds = []; }
       } else if (Array.isArray(userRes.data.favorites)) {
-          favoriteIds = userRes.data.favorites;
+          favoriteIds = userRes.data.favorites.map(String);
       }
 
       if (favoriteIds.length === 0) return [];
@@ -77,20 +77,20 @@ export const addToFavorites = createAsyncThunk(
     try {
       // B1: Lấy favorites hiện tại từ Server
       const userRes = await axios.get(`${BASE_URL}/users/${currentUser.id}`);
-      let currentFavorites: number[] = [];
+      let currentFavorites: string[] = [];
       if (typeof userRes.data.favorites === 'string') {
           try { currentFavorites = JSON.parse(userRes.data.favorites); } catch { currentFavorites = []; }
       } else if (Array.isArray(userRes.data.favorites)) {
-          currentFavorites = userRes.data.favorites;
+          currentFavorites = userRes.data.favorites.map(String);
       }
 
-      // B2: Check trùng (Ép kiểu Number cho chắc chắn)
-      if (currentFavorites.some(id => Number(id) === Number(movie.id))) {
+      // B2: Check trùng (Ép kiểu String)
+      if (currentFavorites.some(id => String(id) === String(movie.id))) {
         return rejectWithValue('Đã tồn tại');
       }
 
       // B3: Thêm ID mới
-      const updatedFavorites = [...currentFavorites, Number(movie.id)];
+      const updatedFavorites = [...currentFavorites, String(movie.id)];
 
       // B4: Cập nhật Server
       await axios.patch(`${BASE_URL}/users/${currentUser.id}`, {
@@ -109,7 +109,7 @@ export const addToFavorites = createAsyncThunk(
 // --- 3. REMOVE FROM FAVORITES (SỬA LỖI KHÔNG XÓA ĐƯỢC TẠI ĐÂY) ---
 export const removeFromFavorites = createAsyncThunk(
   'favorites/remove',
-  async (movieId: number, { getState, rejectWithValue }) => {
+  async (movieId: string, { getState, rejectWithValue }) => {
     const state = getState() as RootState;
     const currentUser = state.auth.user;
 
@@ -118,15 +118,15 @@ export const removeFromFavorites = createAsyncThunk(
     try {
       // B1: Lấy favorites hiện tại từ Server
       const userRes = await axios.get(`${BASE_URL}/users/${currentUser.id}`);
-      let currentFavorites: number[] = [];
+      let currentFavorites: string[] = [];
       if (typeof userRes.data.favorites === 'string') {
           try { currentFavorites = JSON.parse(userRes.data.favorites); } catch(e) { currentFavorites = []; }
       } else if (Array.isArray(userRes.data.favorites)) {
-          currentFavorites = userRes.data.favorites;
+          currentFavorites = userRes.data.favorites.map(String);
       }
 
-      // B2: Lọc bỏ ID cần xóa (FIX: Ép kiểu Number để so sánh chính xác)
-      const updatedFavorites = currentFavorites.filter((id) => Number(id) !== Number(movieId));
+      // B2: Lọc bỏ ID cần xóa
+      const updatedFavorites = currentFavorites.filter((id) => String(id) !== String(movieId));
 
       // B3: Cập nhật Server
       await axios.patch(`${BASE_URL}/users/${currentUser.id}`, {
@@ -160,7 +160,7 @@ export const favoriteSlice = createSlice({
       })
       .addCase(removeFromFavorites.fulfilled, (state, action) => {
         // Xóa item khỏi state items
-        state.items = state.items.filter((item) => Number(item.id) !== Number(action.payload));
+        state.items = state.items.filter((item) => String(item.id) !== String(action.payload));
       });
   },
 });

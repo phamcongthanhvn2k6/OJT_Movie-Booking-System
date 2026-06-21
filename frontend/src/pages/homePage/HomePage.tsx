@@ -25,7 +25,7 @@ const HomePage = () => {
   const formattedMovies = useMemo(() => {
     return movieList.map((movie: any) => ({
       // Chuyển đổi ID từ chuỗi "1" sang số 1
-      id: Number(movie.id), 
+      id: movie.id, 
       
       title: movie.title,
       
