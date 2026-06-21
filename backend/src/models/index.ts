@@ -95,7 +95,16 @@ const SeatSchema = new Schema({
   type: { type: String },
   status: { type: String }
 }, { versionKey: false });
-configureSchema(SeatSchema);
+
+SeatSchema.virtual('id').get(function(this: any) {
+  return this._id;
+});
+SeatSchema.virtual('seat_number').get(function(this: any) {
+  return this.row_name && this.number ? `${this.row_name}${this.number}` : this._id;
+});
+SeatSchema.set('toJSON', { virtuals: true });
+SeatSchema.set('toObject', { virtuals: true });
+
 export const Seat = mongoose.model('Seat', SeatSchema, 'seats');
 
 // 8. Booking Schema
